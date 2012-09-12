@@ -1,4 +1,4 @@
-- if @projects.any?
+- if @projects.any? || @public_projects.any?
   .projects
     .activities.span8
       = render 'shared/no_ssh'
@@ -30,6 +30,22 @@
                   %strong Last activity:
                   %span= project_last_activity(project)
         .bottom= paginate @projects, theme: "gitlab"
+
+      .projects_box
+        %h5
+          Public Projects
+          %small
+            (#{@public_projects.count})
+        %ul.unstyled
+          - @public_projects.each do |project|
+            %li.wll
+              = link_to project_path(project), class: dom_class(project) do
+                %strong.project_name= truncate(project.name, length: 25)
+                %span.arrow
+                  &rarr;
+                %span.last_activity
+                  %strong Last activity:
+                  %span= project_last_activity(project)
 
       %hr
       %div

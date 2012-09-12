@@ -2,12 +2,12 @@ module Authority
   # Compatible with all access rights
   # Should be rewrited for new access rights
   def add_access(user, *access)
-    access = if access.include?(:admin) 
-               { project_access: UsersProject::MASTER } 
+    access = if access.include?(:admin)
+               { project_access: UsersProject::MASTER }
              elsif access.include?(:write)
-               { project_access: UsersProject::DEVELOPER } 
+               { project_access: UsersProject::DEVELOPER }
              else
-               { project_access: UsersProject::REPORTER } 
+               { project_access: UsersProject::REPORTER }
              end
     opts = { user: user }
     opts.merge!(access)
@@ -19,6 +19,7 @@ module Authority
   end
 
   def repository_readers
+    return ['@all'] if public?
     keys = Key.joins({user: :users_projects}).
       where("users_projects.project_id = ? AND users_projects.project_access = ?", id, UsersProject::REPORTER)
     keys.map(&:identifier) + deploy_keys.map(&:identifier)
