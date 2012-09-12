@@ -13,6 +13,27 @@ class Ability
   def self.project_abilities(user, project)
     rules = []
 
+    if project.public?
+      rules << [
+        #guest
+        :read_project,
+        :read_wiki,
+        :read_issue,
+        :read_milestone,
+        :read_snippet,
+        :read_team_member,
+        :read_merge_request,
+        :read_note,
+        :write_project,
+        :write_issue,
+        :write_note,
+        #reporter
+        :download_code,
+        :write_merge_request,
+        :write_snippet
+      ]
+    end
+
     rules << [
       :read_project,
       :read_wiki,

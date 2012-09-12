@@ -76,6 +76,7 @@ class ApplicationController < ActionController::Base
   end
 
   def project
+    @project ||= Project.find_by_code_and_private_flag(params[:project_id], false)
     @project ||= current_user.projects.find_by_code(params[:project_id])
     @project || render_404
   end
