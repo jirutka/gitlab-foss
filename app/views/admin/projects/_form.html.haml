@@ -14,6 +14,11 @@
   %hr
   .adv_settings
     %h6 Advanced settings:
+
+    .clearfix
+      = f.label :private_flag, "Private"
+      .input= f.check_box :private_flag
+
     .clearfix
       = f.label :path do
         Path
