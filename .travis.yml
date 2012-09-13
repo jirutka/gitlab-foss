@@ -5,8 +5,6 @@ before_install:
   - sudo apt-get install libqt4-dev libqtwebkit-dev -y
   - gem install charlock_holmes -v="0.6.8"
 branches:
-  only:
-    - 'master'
 rvm:
   - 1.9.3
 services:
@@ -18,3 +16,5 @@ before_script:
   - "bundle exec rake db:seed_fu RAILS_ENV=test"
   - "sh -e /etc/init.d/xvfb start"
 script: "bundle exec rake travis"
+notifications:
+  email: false
