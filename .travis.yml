@@ -1,5 +1,5 @@
 env:
-  - DB=mysql
+  - DB=pg
 before_install:
   - sudo apt-get install libicu-dev -y
   - sudo apt-get install libqt4-dev libqtwebkit-dev -y
@@ -10,7 +10,6 @@ branches:
 rvm:
   - 1.9.3
 services:
-  - mysql
 before_script:
   - "cp config/database.yml.$DB config/database.yml"
   - "cp config/gitlab.yml.example config/gitlab.yml"

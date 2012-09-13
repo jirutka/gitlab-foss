@@ -12,7 +12,8 @@ gem "rails", "3.2.8"
 
 # Supported DBs
 gem "sqlite3"
-gem "mysql2"
+#gem "mysql2"
+gem "pg"
 
 # Auth
 gem "devise", "~> 2.1.0"
