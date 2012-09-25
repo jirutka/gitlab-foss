@@ -18,7 +18,7 @@ Gitlab běží na adrese https://gitlab.fit.cvut.cz a má do něj přístup kdok
 
 ## Doporučení
 
-* Domníváte-li se, že by váš projekt mohl být užitečný i lidem mimo fakultu, umístěte ho (zároveň i) na [GitHub](https://github.com)! Máme na něm i vlastní [„organizaci“ ČVUT](https://github.com/cvut), v rámci které je možné vytvářet týmy. Pro přidání do organizace mě kontaktujte na [emailu](mailto:jirutjak@fit.cvut.cz).
+* Domníváte-li se, že by váš projekt mohl být užitečný i lidem mimo fakultu, umístěte ho (zároveň i) na [GitHub](https://github.com)! Máme na něm i vlastní [„organizaci“ ČVUT](https://github.com/cvut), v rámci které je možné vytvářet týmy. Pro přidání do organizace mě kontaktujte na [e-mailu](mailto:jirutjak@fit.cvut.cz).
 
 * Nemáte-li rozumný důvod k utajování (např. pracujete na přísně tajném projektu, stydíte se za svůj kód, …), nastavte svůj projekt jako „veřejný“ pro přihlášené uživatele (tzn. akademickou obci FIT, popř. kolegy z FEL).
 
@@ -34,7 +34,7 @@ Gitlab běží na adrese https://gitlab.fit.cvut.cz a má do něj přístup kdok
 
 ## Podělte se o svůj názor!
 
-Máte nápad na nějaké vylepšení či kritiku? Chtěli byste v rámci semestrální či bakalářské práce napsat nějaké rozšíření do Gitlabu a přispět tím své fakultě i _open-source_ komunitě? Napište mi na [e-mail](jirutjak@fit.cvut.cz)! Chyby prosím hlaste do [issue-trackingu](https://github.com/cvut/gitlabhq/issues) v našem _forku_ projektu na GitHubu.
+Máte nápad na nějaké vylepšení či kritiku? Chtěli byste v rámci semestrální či bakalářské práce napsat nějaké rozšíření do Gitlabu a přispět tím své fakultě i _open-source_ komunitě? Napište mi na [e-mail](mailto:jirutjak@fit.cvut.cz)! Chyby prosím hlaste do [issue-trackingu](https://github.com/cvut/gitlabhq/issues) v našem _forku_ projektu na GitHubu.
 
 Berte prosím v potaz, že já _nejsem_ tvůrce Gitlabu, pouze zajišťuji jeho provoz a upravuji ho pro potřeby FIT, ve svém volném čase. Malé změny zatím zvládám sám, na případné větší by se vypsala nějaká semestrální či bakalářská práce.
 
