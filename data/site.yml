@@ -1,0 +1,20 @@
+title: "Gitlab FIT"
+logo: "gitlab-logo.png"
+copyright: "&copy; 2012 Jakub Jirůtka, FIT ČVUT v Praze"
+navigation:
+  - header: "Další stránky"
+    items:
+    - title: "Úvod"
+      url: "index.html"
+    - title: "Role a práva"
+      url: "roles.html"
+  - header: "Odkazy"
+    items:
+    - title: "Issue tracking (FIT)"
+      url: "https://github.com/cvut/gitlabhq/issues"
+    - title: "Zdrojové kódy (FIT)"
+      url: "https://github.com/cvut/gitlabhq"
+    - title: "Oficiální web projektu"
+      url: "http://gitlabhq.com/"
+analytics:
+  tracking_id: "UA-30120295-3"

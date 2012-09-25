@@ -1,0 +1,63 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title><%= data.site.title %> | <%= data.page.title %></title>
+
+		<%= stylesheet_link_tag "screen" %>
+		<% if data.site.analytics %>
+			<%= partial 'layouts/analytics_tracking' %>
+		<% end %>
+	</head>
+	<body>
+		<div id="main">
+			<div id="header-wrapper">
+				<div id="header" class="basic" >
+					<div class="site">
+						<%= link_to image_tag(data.site.logo, :alt => 'Logo'), 
+							'/', :class => 'logo' %>
+					</div>
+				</div>
+			</div>
+			<div id="content-wrapper">
+				<div id="content" class="site">
+					<div class="wikistyle">
+
+						<%= yield %>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer" >
+			<div class="upper_footer">
+				<div class="footer_inner clearfix">
+					<h4 id="cvutlogo">Links</h4>
+
+					<% data.site.navigation.each do |navig| %>
+						<ul class="footer_nav">
+							<h4><%= navig.header %></h4>
+							<% navig.items.each do |link| %>
+								<li><%= link_to link.title, link.url %></li>
+							<% end %>
+						</ul>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="lower_footer">
+				<div class="footer_inner clearfix">
+					<div id="legal"> 
+						<p><%= data.site.copyright %></p>
+	    				<p>
+							<%= link_to image_tag('cc-by-nc-sa.png', :alt => 'Creative Commons License'), 
+								'http://creativecommons.org/licenses/by-nc-sa/3.0/', :rel => 'license' %>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

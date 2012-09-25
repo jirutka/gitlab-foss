@@ -1,0 +1,6 @@
+/.bundle
+/.rvmrc
+/.sass-cache
+/build
+.DS_Store
+*.swp
