@@ -8,6 +8,8 @@ navigation:
       url: "index.html"
     - title: "Role a práva"
       url: "roles.html"
+    - title: "Jak na Git"
+      url: "git/index.html"
     - title: "Semestrální práce"
       url: "tasks/index.html"
   - header: "Odkazy"
