@@ -1,5 +1,5 @@
 ---
-title: Jak na Git
+title: Jak na Git
 ---
 
 Jak na Git
@@ -20,6 +20,8 @@ Git klienti
 
 Chcete-li naplno využít všech možností Gitu, naučte se ho ovládat přes příkazovou řádku! Různé GUI nástroje vám mohou nabídnout komfortnější uživatelské rozhraní pro běžnou, každodenní práci, ale složitější operace zpravidla neumožňují. Nicméně lidé mají rádi _klikátka_, takže zde je přehled několika klientů pro různé platformy. Samozřejmě není ani zdaleka kompletní, nicméně pokusil jsem se vybrat to nejlepší.
 
+[Podrobný přehled klientů na Git Wiki](https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces)
+
 **Multiplatformní:**
 
 * [git](http://git-scm.com/docs) – klasická příkazová řádka, toť nejmocnější zbraň programátorova!
@@ -34,7 +36,8 @@ Chcete-li naplno využít všech možností Gitu, naučte se ho ovládat přes p
 
 **Linux:**
 
-* [Git Cola](http://git-cola.github.com/) – „mezi jednookými králem“
+* [Git Cola](http://git-cola.github.com/) – užitečný zejména pro commit změn, PyQt
+* [gitg](http://git.gnome.org/browse/gitg/) – jednoduchý ale příjemný klient, GTK+
 * [Tig](http://jonas.nitro.dk/tig/) – klient se semigrafickým rozhraním
 
 
