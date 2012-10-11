@@ -5,7 +5,7 @@ title: Git v příkazové řádce
 Git v příkazové řádce
 =====================
 
-Chcete-li naplno využít všech možností Gitu, naučte se ho ovládat přes příkazovou řádku. Různé GUI nástroje vám mohou nabídnout komfortnější uživatelské rozhraní pro běžnou, každodenní práci, ale složitější operace zpravidla neumožňují.
+Git vznikl na Linuxu, jeho tvůrcem je sám [Linus Torvalds](http://www.youtube.com/watch?v=4XpnKHJAok8), takže je primárně navržený pro ovládání z příkazové řádky (grafické nástroje pro něj ale samozřejmě také existují). Nemusíte se toho vůbec obávat, jakmile si nastudujete základy a pochopíte filosofii Gitu, tak to bude hračka.
 
 
 První kroky

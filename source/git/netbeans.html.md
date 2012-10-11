@@ -5,7 +5,7 @@ title: Git v NetBeans
 Git v NetBeans
 ==============
 
-NetBeans mají velmi špatnou podporu Gitu, uživatelské rozhraní je neintuitivní a nabízí jen zlomek z toho, co Git umí. Doporučuji pro interakci s Gitem používat spíše externího Git klienta a z podpory v NetBeans využívat jen integraci v editoru (zvýraznění změněných řádků, procházení historie apod.) Pokud přesto chcete Git ovládat primárně z NetBeans a bojíte se příkazové řádky, následujte tento návod.
+NetBeans mají velmi špatnou podporu Gitu, uživatelské rozhraní je neintuitivní a nabízí jen zlomek z toho, co Git umí. Doporučuji pro interakci s Gitem používat spíše [příkazovou řádku](git-cli.html) nebo externího Git klienta a z podpory v NetBeans využívat jen integraci v editoru (zvýraznění změněných řádků, procházení historie apod.) Pokud přesto chcete Git ovládat primárně z NetBeans a bojíte se příkazové řádky, následujte tento návod.
 
 První kroky
 -----------
