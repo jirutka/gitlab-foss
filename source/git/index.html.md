@@ -13,6 +13,7 @@ Návody
 
 * [Příkazová řádka](git-cli.html)
 * [NetBeans 7](netbeans.html)
+* [IntelliJ IDEA 11](idea.html)
 
 
 Git klienti
