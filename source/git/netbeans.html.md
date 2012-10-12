@@ -7,8 +7,11 @@ Git v NetBeans
 
 NetBeans mají velmi špatnou podporu Gitu, uživatelské rozhraní je neintuitivní a nabízí jen zlomek z toho, co Git umí. Doporučuji pro interakci s Gitem používat spíše [příkazovou řádku](git-cli.html) nebo externího Git klienta a z podpory v NetBeans využívat jen integraci v editoru (zvýraznění změněných řádků, procházení historie apod.) Pokud přesto chcete Git ovládat primárně z NetBeans a bojíte se příkazové řádky, následujte tento návod.
 
-První kroky
------------
+
+Inicializace nového repozitáře
+------------------------------
+
+Tento scénář platí pro případ, kdy jste na GitLabu právě vytvořili nový projekt, jehož repozitář zatím zeje prázdnotou.
 
 0. Vygenerujte si svůj SSH klíč, pokud ho ještě nemáte, a jeho veřejnou část [přidejte do GitLab](https://gitlab.fit.cvut.cz/keys).
 1. Inicializujte nový Git repozitář pro váš projekt, pokud jste tak již neučinili;
@@ -24,6 +27,28 @@ První kroky
    * Team → Remote → Push…,
    * vyplňte požadované údaje;
       * Repository URL: SSH adresa repozitáře, kterou vidíte na GitLab hned pod menu (ve tvaru `git@gitlab.fit.cvut.cz:<YOUR_PROJECT>.git`),
-      * Private/Public Key / Private Key File: vyberte váš _soukromý_ SSH klíč, který jste si vygenerovali (musí být ve formátu OpenSSH!);
+      * Private/Public Key / Private Key File: vyberte váš _soukromý_ SSH klíč, který jste si vygenerovali (musí být ve formátu OpenSSH!),
+      * Passphrase: pokud máte svůj SSH klíč zaheslovaný, zadejte jeho heslo, jinak nechte prázdné,
    * v dalším kroku vyberte lokální a vzdálenou větev (`master -> master`),
    * kliknutím na „Finish“ se provede _push_ na GitLab.
+
+
+Import projektu z existujícího repozitáře
+-----------------------------------------
+
+Tento scénář platí typicky pro případ, kdy vás kolega přidá do již rozběhnutého projektu (neprázdný repozitář), na kterém nyní máte začít pracovat.
+
+0. Vygenerujte si svůj SSH klíč, pokud ho ještě nemáte, a jeho veřejnou část [přidejte do GitLab](https://gitlab.fit.cvut.cz/keys).
+1. Naklonujte vzdálený repozitář z GitLab.
+   * Team → Git → Clone…,
+   * vyplňte požadované údaje;
+      * Repository URL: SSH adresa repozitáře, kterou vidíte na GitLab hned pod menu (ve tvaru `git@gitlab.fit.cvut.cz:<YOUR_PROJECT>.git`),
+      * Private/Public Key / Private Key File: vyberte váš _soukromý_ SSH klíč, který jste si vygenerovali (musí být ve formátu OpenSSH!),
+      * Passphrase: pokud máte svůj SSH klíč zaheslovaný, zadejte jeho heslo, jinak nechte prázdné,
+   * v dalším kroku vyberte větve, na kterých chcete pracovat (většinou `master`),
+   * nakonec zbývá vyplnit;
+      * Parent Directory & Clone Name: cílový adresář, do kterého se projekt uloží,
+      * Remote Name: zástupné jméno repozitáře, pro primární se používá „origin“,
+   * kliknutím na „Finish“ se vytvoří váš lokální klon vzdáleného repozitáře a NetBeans by vám měli nabídnout otevření projektu.
+
+Nezapomeňte na to, že _commit_ změn se vždy provádí do vašeho _lokálního_ repozitáře (v adresáři `/.git` pod vaším projektem). Jakmile je chcete přenést do repozitáře na GitLab, musíte provést _push_.
