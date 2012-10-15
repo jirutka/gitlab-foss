@@ -19,3 +19,4 @@ Zadání
 * [Integrace GitLab s LDAP](ldap-integration.html)
 * [Výkonnostní analýza a optimalizace GitLab](performance.html)
 * [Integrace GitLab s Jenkins CI](jenkins-integration.html)
+* [Integrace Gollum wiki do GitLab](gollum-wiki.html)
