@@ -20,9 +20,9 @@ Wiki stránky, které vývojáři často využívají pro dokumentaci, jsou odd�
 Požadavek
 ---------
 
-Navrhněte a po schválení implementujte modul (přesněji [Rails Engine](http://guides.rubyonrails.org/engines.html)) pro integraci wiki systému [Gollum](https://github.com/github/gollum) do GitLab. Nabízí se v zásadě dva způsoby řešení:
+Navrhněte a po schválení implementujte modul (přesněji [Rails Engine](http://guides.rubyonrails.org/engines.html)) pro integraci wiki systému [Gollum](https://github.com/github/gollum) do GitLab (pro správu Git repozitářů využívá [Gitolite](https://github.com/sitaramc/gitolite)). Nabízí se v zásadě dva způsoby řešení:
 
-* Gollum se integruje do stávající wiki tak, že nedojde ke změně na _front-end_, pouze se stránky místo do databáze budou ukládat do Git repozitáře.
+* Gollum nahradí stávající wiki tak, že nedojde ke změně na _front-end_, pouze se stránky místo do databáze budou ukládat do Git repozitáře.
 * Stávající wiki bude ponechána beze změny a modul nabídne kompletní alternativu. V nastavení projektu pak bude možné zvolit původní wiki, nebo tuto novou.
 
 Obě řešení mají své výhody a nevýhody, je nutné je zvážit, zejména s ohledem na míru invazivnosti zásahu do jádra aplikace, a zvolit nejvhodnější řešení.
