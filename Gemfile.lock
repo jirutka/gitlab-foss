@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/jirutka/gitolite.git
+  revision: 75d64ea15aa51557034fae44c578438f85249f1e
+  ref: 75d64ea15aa51557034fae44c578438f85249f1e
+  specs:
+    gitolite (1.1.0)
+      gratr19 (~> 0.4.4.1)
+      grit (~> 2.5.0)
+      hashery (~> 1.5.0)
+
+GIT
   remote: https://github.com/bmabey/database_cleaner.git
   revision: f89c34300e114be99532f14c115b2799a3380ac6
   ref: f89c34300e114be99532f14c115b2799a3380ac6
@@ -147,6 +157,7 @@ GEM
     colorize (0.5.8)
     crack (0.3.1)
     daemons (1.1.9)
+    dalli (2.6.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -190,10 +201,6 @@ GEM
       pygments.rb (>= 0.2.13)
     github-markup (0.7.4)
     gitlab_meta (4.0)
-    gitolite (1.1.0)
-      gratr19 (~> 0.4.4.1)
-      grit (~> 2.5.0)
-      hashery (~> 1.5.0)
     grape (0.2.2)
       activesupport
       hashie (~> 1.2)
@@ -464,6 +471,7 @@ DEPENDENCIES
   chosen-rails (= 0.9.8)
   coffee-rails (~> 3.2.2)
   colored
+  dalli
   database_cleaner!
   devise (~> 2.1.0)
   draper (~> 0.18.0)
@@ -477,7 +485,7 @@ DEPENDENCIES
   github-linguist (~> 2.3.4)
   github-markup (~> 0.7.4)
   gitlab_meta (= 4.0)
-  gitolite (= 1.1.0)
+  gitolite!
   grack!
   grape (~> 0.2.1)
   grit!

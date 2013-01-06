@@ -14,6 +14,9 @@ gem "rails", "3.2.10"
 gem "mysql2", group: :mysql
 gem "pg", group: :postgres
 
+# Cache store adapter for Memcached
+gem "dalli", group: :memcached
+
 # Auth
 gem "devise", "~> 2.1.0"
 gem 'omniauth', "~> 1.1.1"
@@ -29,7 +32,8 @@ gem 'grack',         git: "https://github.com/gitlabhq/grack.git",          ref:
 gem 'grit_ext',      git: "https://github.com/gitlabhq/grit_ext.git",       ref: '8e6afc2da821354774aa4d1ee8a1aa2082f84a3e'
 
 # Gitolite client (for work with gitolite-admin repo)
-gem "gitolite", '1.1.0'
+# Forked version with important performance patch (will be merged to upstream soon)
+gem "gitolite",      git: "git://github.com/jirutka/gitolite.git",          ref: '75d64ea15aa51557034fae44c578438f85249f1e'
 
 # Syntax highlighter
 gem "pygments.rb",  git: "https://github.com/gitlabhq/pygments.rb.git", branch: "master"
