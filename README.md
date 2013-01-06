@@ -1,6 +1,14 @@
-# Welcome to GitLab [![build status](https://secure.travis-ci.org/gitlabhq/gitlabhq.png)](https://travis-ci.org/gitlabhq/gitlabhq) [![build status](https://secure.travis-ci.org/gitlabhq/grit.png)](https://travis-ci.org/gitlabhq/grit) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/gitlabhq/gitlabhq) [![Dependency Status](https://gemnasium.com/gitlabhq/gitlabhq.png)](https://gemnasium.com/gitlabhq/gitlabhq)
+# Welcome to GitLab [![build status](https://secure.travis-ci.org/cvut/gitlabhq.png)](https://secure.travis-ci.org/cvut/gitlabhq)
 
-GitLab is a free project and repository management application
+This is a [CTU](http://www.cvut.cz/) fork of [GitLab](https://github.com/gitlabhq/gitlabhq), free project and repository management application.
+
+
+## What’s new in this fork?
+
+* [Internally public projects support](https://github.com/cvut/gitlabhq/pull/5)
+* [Google Analytics support](https://github.com/gitlabhq/gitlabhq/pull/2387)
+* [PostgreSQL fixes](https://github.com/gitlabhq/gitlabhq/pull/1489)
+* Some performance patches ([#2451](https://github.com/gitlabhq/gitlabhq/pull/2451), [#2453](https://github.com/gitlabhq/gitlabhq/pull/2453), [gitolite:#39](https://github.com/wingrunr21/gitolite/pull/39))
 
 
 ## Application details
@@ -9,36 +17,27 @@ GitLab is a free project and repository management application
 * distributed under the MIT License
 * works with gitolite
 
+
 ## Requirements
 
-* Ubuntu/Debian
-* ruby 1.9.3+
-* MySQL
-* git
-* gitolite
-* redis
+* GNU/Linux
+* Ruby 1.9.3+
+* PostgreSQL or MySQL
+* Git
+* Gitolite
+* Redis
 
-## Install
 
-Checkout wiki pages for installation information, migration, etc.
+## Installation
 
-## Community
+See how to [install on Gentoo](https://github.com/cvut/gitlabhq/wiki/Install-on-Gentoo) or [Debian-based distros](https://github.com/gitlabhq/gitlabhq/blob/4-0-stable/doc/install/installation.md).
 
-[Google Group](https://groups.google.com/group/gitlabhq)
 
-## Contacts
+## More information…
 
-Twitter:
+For more information see [upstream’s](https://github.com/gitlabhq/gitlabhq) wiki pages.
 
- * @gitlabhq
- * @dzaporozhets 
-
-Email
-
- * m@gitlabhq.com
 
 ## Contribute
 
 [Development Tips](https://github.com/gitlabhq/gitlabhq/blob/master/doc/development.md)
-Want to help - send a pull request.
-We'll accept good pull requests.
