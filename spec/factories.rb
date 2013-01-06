@@ -138,9 +138,10 @@ FactoryGirl.define do
   end
 
   factory :wiki do
-    title
-    content
+    sequence(:title) { |n| "wiki#{n}" }
+    content "Content"
     user
+    project
   end
 
   factory :snippet do
