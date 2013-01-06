@@ -14,6 +14,8 @@ class DashboardController < ApplicationController
                   @projects.personal(current_user)
                 when 'joined' then
                   @projects.joined(current_user)
+                when 'public' then
+                  @projects.public_only
                 else
                   @projects
                 end

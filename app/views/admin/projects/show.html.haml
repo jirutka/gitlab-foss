@@ -102,6 +102,13 @@
     %td
       = check_box_tag :post_receive_file, 1, @project.has_post_receive_file?, disabled: true
 
+  %tr
+    %td
+      %b
+        Private:
+    %td
+      = check_box_tag :private_flag, 1, @project.private?, disabled: true
+
 %br
 %h5
   Team

@@ -15,6 +15,8 @@
       = link_to "Personal", dashboard_path(scope: 'personal')
     = nav_tab :scope, 'joined' do
       = link_to "Joined", dashboard_path(scope: 'joined')
+    = nav_tab :scope, 'public' do
+      = link_to "Public", dashboard_path(scope: 'public')
 
   %ul.well-list
     - projects.each do |project|

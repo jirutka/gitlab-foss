@@ -42,7 +42,7 @@ describe Project do
   describe "Mass assignment" do
     it { should_not allow_mass_assignment_of(:namespace_id) }
     it { should_not allow_mass_assignment_of(:owner_id) }
-    it { should_not allow_mass_assignment_of(:private_flag) }
+    it { should allow_mass_assignment_of(:private_flag) }
   end
 
   describe "Validation" do

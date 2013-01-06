@@ -30,7 +30,7 @@ class Project < ActiveRecord::Base
   class TransferError < StandardError; end
 
   attr_accessible :name, :path, :description, :default_branch, :issues_enabled,
-                  :wall_enabled, :merge_requests_enabled, :wiki_enabled, as: [:default, :admin]
+                  :wall_enabled, :merge_requests_enabled, :wiki_enabled, :private_flag, as: [:default, :admin]
 
   attr_accessible :namespace_id, :owner_id, as: :admin
 
@@ -87,7 +87,7 @@ class Project < ActiveRecord::Base
   class << self
     def authorized_for user
       projects = includes(:users_projects, :namespace)
-      projects = projects.where("users_projects.user_id = :user_id or projects.owner_id = :user_id or namespaces.owner_id = :user_id", user_id: user.id)
+      projects = projects.where("users_projects.user_id = :user_id or projects.owner_id = :user_id or namespaces.owner_id = :user_id or projects.private_flag = false", user_id: user.id)
     end
 
     def active

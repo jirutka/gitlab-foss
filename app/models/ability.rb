@@ -27,6 +27,8 @@ class Ability
 
       elsif project.guest_access_for?(user)
         rules << project_guest_rules
+      elsif project.public?
+        rules << project_public_rules
       end
 
       if project.namespace
@@ -102,6 +104,10 @@ class Ability
         :rename_project,
         :remove_project
       ]
+    end
+
+    def project_public_rules
+      project_report_rules
     end
 
     def group_abilities user, group

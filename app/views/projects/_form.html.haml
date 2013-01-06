@@ -23,6 +23,11 @@
         = f.label :default_branch, "Default Branch"
         .input= f.select(:default_branch, @project.heads.map(&:name), {}, style: "width:210px;")
 
+    .control-group
+      = f.label :private_flag, "Private"
+      .controls
+        = f.check_box :private_flag
+
   %fieldset.features
     %legend Features:
 

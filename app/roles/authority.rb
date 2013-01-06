@@ -19,6 +19,7 @@ module Authority
   end
 
   def repository_readers
+    return ['@all'] if public?
     repository_members[UsersProject::REPORTER]
   end
 
