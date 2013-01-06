@@ -266,8 +266,6 @@ class Settings < Settingslogic
       app['gravatar_ssl_url'] || 'https://secure.gravatar.com/avatar/%{hash}?s=%{size}&d=mm'
     end
 
-
-
     def gitlab_on_non_standard_port?
       ![443, 80].include?(gitlab.port.to_i)
     end
@@ -350,3 +348,6 @@ Settings.git['max_size']  ||= Settings.pre_40_config ? Settings.git_max_size : 5
 Settings.git['bin_path']  ||= Settings.pre_40_config ? Settings.git_bin_path : '/usr/bin/git'
 Settings.git['timeout']   ||= Settings.pre_40_config ? Settings.git_timeout : 10
 Settings.git['path']      ||= Settings.git.bin_path # FIXME: Deprecated: remove for 4.1
+
+Settings['analytics'] ||= Settingslogic.new({})
+Settings.analytics['enabled'] ||= false
