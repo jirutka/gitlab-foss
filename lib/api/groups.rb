@@ -52,6 +52,7 @@ module API
         @group.owner = current_user
 
         if @group.save
+          @group.add_owner(current_user)
           present @group, with: Entities::Group
         else
           render_api_error!("Failed to save group #{@group.errors.messages}", 400)
