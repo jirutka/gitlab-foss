@@ -11,20 +11,20 @@ module Gitlab
     end
 
     def project_name_regex
-      /\A[a-zA-Z0-9_.][a-zA-Z0-9_\-\. ]*\z/
+      /\A[\p{Alnum}_][\p{Alnum}\p{Pd}_\. ]*\z/
     end
 
     def project_regex_message
-      "can contain only letters, digits, '_', '-' and '.' and space. " \
+      "can contain only letters, digits, '_', '.', dash and space. " \
       "It must start with letter, digit or '_'."
     end
 
     def name_regex
-      /\A[a-zA-Z0-9_\-\. ]*\z/
+      /\A[\p{Alnum}\p{Pd}_\. ]*\z/
     end
 
     def name_regex_message
-      "can contain only letters, digits, '_', '-' and '.' and space."
+      "can contain only letters, digits, '_', '.', dash and space."
     end
 
     def path_regex
