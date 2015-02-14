@@ -64,7 +64,7 @@ GEM
       json (>= 1.7)
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    charlock_holmes (0.6.9.4)
+    charlock_holmes (0.7.3)
     cliver (0.3.2)
     code_analyzer (0.4.3)
       sexp_processor
