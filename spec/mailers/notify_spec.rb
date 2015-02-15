@@ -7,9 +7,9 @@ describe Notify do
 
   new_user_address = 'newguy@example.com'
 
-  let(:gitlab_sender_display_name) { Gitlab.config.gitlab.email_display_name }
-  let(:gitlab_sender) { Gitlab.config.gitlab.email_from }
-  let(:gitlab_sender_reply_to) { Gitlab.config.gitlab.email_reply_to }
+  let(:gitlab_sender_display_name) { Gitlab.config.outgoing_emails.display_name }
+  let(:gitlab_sender) { Gitlab.config.outgoing_emails.from }
+  let(:gitlab_sender_reply_to) { Gitlab.config.outgoing_emails.reply_to }
   let(:recipient) { create(:user, email: 'recipient@example.com') }
   let(:project) { create(:project) }
 
