@@ -5,7 +5,7 @@ describe Notify do
   include EmailSpec::Matchers
   include RepoHelpers
 
-  let(:gitlab_sender) { Gitlab.config.gitlab.email_from }
+  let(:gitlab_sender) { Gitlab.config.outgoing_emails.from }
   let(:recipient) { create(:user, email: 'recipient@example.com') }
   let(:project) { create(:project) }
 

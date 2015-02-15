@@ -95,9 +95,6 @@ Settings.gitlab['https']        = false if Settings.gitlab['https'].nil?
 Settings.gitlab['port']       ||= Settings.gitlab.https ? 443 : 80
 Settings.gitlab['relative_url_root'] ||= ENV['RAILS_RELATIVE_URL_ROOT'] || ''
 Settings.gitlab['protocol']   ||= Settings.gitlab.https ? "https" : "http"
-Settings.gitlab['email_enabled'] ||= true if Settings.gitlab['email_enabled'].nil?
-Settings.gitlab['email_from'] ||= "gitlab@#{Settings.gitlab.host}"
-Settings.gitlab['email_reply_to'] ||= "noreply@#{Settings.gitlab.host}"
 Settings.gitlab['url']        ||= Settings.send(:build_gitlab_url)
 Settings.gitlab['user']       ||= 'git'
 Settings.gitlab['user_home']  ||= begin
@@ -119,6 +116,21 @@ Settings.gitlab.default_projects_features['wiki']           = true if Settings.g
 Settings.gitlab.default_projects_features['snippets']       = false if Settings.gitlab.default_projects_features['snippets'].nil?
 Settings.gitlab.default_projects_features['visibility_level']    = Settings.send(:verify_constant, Gitlab::VisibilityLevel, Settings.gitlab.default_projects_features['visibility_level'], Gitlab::VisibilityLevel::PRIVATE)
 Settings.gitlab['repository_downloads_path'] = File.absolute_path(Settings.gitlab['repository_downloads_path'] || 'tmp/repositories', Rails.root)
+
+#
+# Outgoing emails
+#
+Settings['outgoing_emails'] ||= Settingslogic.new({})
+Settings.outgoing_emails['enabled']           ||= Settings.gitlab['email_enabled'] unless Settings.gitlab['email_enabled'].nil?  # for backward compatibility
+Settings.outgoing_emails['enabled']           ||= true if Settings.outgoing_emails['enabled'].nil?
+Settings.outgoing_emails['from']              ||= Settings.gitlab['email_from'] || "gitlab@#{Settings.gitlab.host}"
+Settings.outgoing_emails['reply_to']          ||= "noreply@#{Settings.gitlab.host}"
+Settings.outgoing_emails['delivery_method']   ||= :sendmail
+Settings.outgoing_emails['sendmail_settings'] ||= {}
+Settings.outgoing_emails['smtp_settings']     ||= {}
+
+# For backward compatibility.
+Settings.gitlab['email_from'] = Settings.outgoing_emails['from']
 
 #
 # Gravatar
