@@ -199,7 +199,7 @@ module API
     end
 
     def secret_token
-      File.read(Rails.root.join('.gitlab_shell_secret'))
+      File.read(Gitlab.config.gitlab_shell.secret_file)
     end
   end
 end

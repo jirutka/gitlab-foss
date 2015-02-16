@@ -304,6 +304,7 @@ production: &base
     # REPOS_PATH MUST NOT BE A SYMLINK!!!
     repos_path: /home/git/repositories/
     hooks_path: /home/git/gitlab-shell/hooks/
+    secret_file: /home/git/gitlab/.gitlab_shell_secret
 
     # Git over HTTP
     upload_pack: true
