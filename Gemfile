@@ -43,7 +43,8 @@ gem "gitlab_git", '7.0.0.rc14'
 gem 'gitlab-grack', '~> 2.0.0.pre', require: 'grack'
 
 # LDAP Auth
-gem 'gitlab_omniauth-ldap', '1.2.0', require: "omniauth-ldap"
+# Patched for attributes mapping customization
+gem 'gitlab_omniauth-ldap', '1.2.0', require: 'omniauth-ldap', git: 'https://github.com/jirutka/omniauth-ldap.git', ref: '901c63c9be4f8492cbe2eacf50ff7be094b4f5a4'
 
 # Git Wiki
 gem 'gollum-lib', '~> 3.0.0'

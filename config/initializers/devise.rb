@@ -220,6 +220,7 @@ Devise.setup do |config|
         method:   server['method'],
         bind_dn:  server['bind_dn'],
         password: server['password'],
+        mapping:  server['mapping'],
         name_proc: email_stripping_proc
     end
   end
