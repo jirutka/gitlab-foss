@@ -81,6 +81,7 @@ if Settings.ldap['enabled'] || Rails.env.test?
     server['active_directory'] = true if server['active_directory'].nil?
     server['provider_name'] ||= "ldap#{key}".downcase
     server['provider_class'] = OmniAuth::Utils.camelize(server['provider_name'])
+    server['mapping'] ||= {}
   end
 end
 
