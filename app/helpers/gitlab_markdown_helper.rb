@@ -54,6 +54,16 @@ module GitlabMarkdownHelper
     @markdown.render(text).html_safe
   end
 
+  def asciidoc(text)
+    Gitlab::Asciidoc.render_asciidoc(text, {
+      commit: @commit,
+      project: @project,
+      project_wiki: @project_wiki,
+      requested_path: @path,
+      ref: @ref
+    })
+  end
+
   # Return the first line of +text+, up to +max_chars+, after parsing the line
   # as Markdown.  HTML tags in the parsed output are not counted toward the
   # +max_chars+ limit.  If the length limit falls within a tag's contents, then
@@ -65,8 +75,11 @@ module GitlabMarkdownHelper
   end
 
   def render_wiki_content(wiki_page)
-    if wiki_page.format == :markdown
+    case wiki_page.format
+    when :markdown
       markdown(wiki_page.content)
+    when :asciidoc
+      asciidoc(wiki_page.content)
     else
       wiki_page.formatted_content.html_safe
     end
