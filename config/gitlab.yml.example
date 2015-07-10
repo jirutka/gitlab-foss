@@ -350,6 +350,9 @@ production: &base
     # piwik_url: '_your_piwik_url'
     # piwik_site_id: '_your_piwik_site_id'
 
+    ## Enable MathJax
+    # mathjax_enabled: false
+
   rack_attack:
     git_basic_auth:
       # Rack Attack IP banning enabled

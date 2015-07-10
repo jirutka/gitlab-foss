@@ -1,0 +1,11 @@
+%script{src: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'}
+%script{type: 'text/x-mathjax-config'}
+  :plain
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        ignoreClass: "nostem|nolatexmath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    });
