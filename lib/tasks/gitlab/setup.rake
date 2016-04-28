@@ -14,8 +14,8 @@ namespace :gitlab do
       puts ""
     end
 
-    Rake::Task["db:reset"].invoke
-    Rake::Task["add_limits_mysql"].invoke
+    Rake::Task["db:schema:load"].invoke
+    Rake::Task["db:seed"].invoke
     Rake::Task["setup_postgresql"].invoke
     Rake::Task["db:seed_fu"].invoke
   rescue Gitlab::TaskAbortedByUserError
