@@ -32,7 +32,7 @@ namespace :gitlab do
     # development environment.
     Rake::Task["dev:terminate_all_connections"].invoke unless Rails.env.production?
 
-    Rake::Task["db:reset"].invoke
+    Rake::Task["db:structure:load"].invoke
     Rake::Task["db:seed_fu"].invoke
   rescue Gitlab::TaskAbortedByUserError
     puts "Quitting...".color(:red)
