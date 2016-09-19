@@ -354,7 +354,8 @@ gem 'health_check', '~> 2.6.0'
 
 # System information
 gem 'vmstat', '~> 2.3.0'
-gem 'sys-filesystem', '~> 1.1.6'
+# Uses Ruby FFI which Grsecurity/PaX doesn't like.
+gem 'sys-filesystem', '~> 1.1.6', group: :exclude
 
 # Gitaly GRPC client
 gem 'gitaly', '~> 0.5.0'
