@@ -37,26 +37,26 @@ gem 'devise', '~> 4.4'
 gem 'doorkeeper', '~> 4.3'
 gem 'doorkeeper-openid_connect', '~> 1.5'
 gem 'omniauth', '~> 1.8'
-gem 'omniauth-auth0', '~> 2.0.0'
-gem 'omniauth-azure-oauth2', '~> 0.0.9'
-gem 'omniauth-cas3', '~> 1.1.4'
-gem 'omniauth-facebook', '~> 4.0.0'
-gem 'omniauth-github', '~> 1.3'
-gem 'omniauth-gitlab', '~> 1.0.2'
-gem 'omniauth-google-oauth2', '~> 0.5.3'
+gem 'omniauth-auth0', '~> 2.0.0', group: :exclude
+gem 'omniauth-azure-oauth2', '~> 0.0.9', group: :exclude
+gem 'omniauth-cas3', '~> 1.1.4', group: :exclude
+gem 'omniauth-facebook', '~> 4.0.0', group: :exclude
+gem 'omniauth-github', '~> 1.3', group: :exclude
+gem 'omniauth-gitlab', '~> 1.0.2', group: :exclude
+gem 'omniauth-google-oauth2', '~> 0.5.3', group: :exclude
 gem 'omniauth-kerberos', '~> 0.3.0', group: :kerberos
 gem 'omniauth-oauth2-generic', '~> 0.2.2'
-gem 'omniauth-saml', '~> 1.10'
-gem 'omniauth-shibboleth', '~> 1.3.0'
-gem 'omniauth-twitter', '~> 1.4'
-gem 'omniauth_crowd', '~> 2.2.0'
-gem 'omniauth-authentiq', '~> 0.3.3'
+gem 'omniauth-saml', '~> 1.10', group: :exclude
+gem 'omniauth-shibboleth', '~> 1.3.0', group: :exclude
+gem 'omniauth-twitter', '~> 1.4', group: :exclude
+gem 'omniauth_crowd', '~> 2.2.0', group: :exclude
+gem 'omniauth-authentiq', '~> 0.3.3', group: :exclude
 gem 'rack-oauth2', '~> 1.2.1'
 gem 'jwt', '~> 1.5.6'
 
 # Spam and anti-bot protection
 gem 'recaptcha', '~> 3.0', require: 'recaptcha/rails'
-gem 'akismet', '~> 2.0'
+gem 'akismet', '~> 2.0', group: :exclude
 
 # Two-factor authentication
 gem 'devise-two-factor', '~> 3.0.0'
@@ -116,19 +116,19 @@ gem 'mini_magick'
 gem 'dropzonejs-rails', '~> 0.7.1', group: :assets
 
 # for backups
-gem 'fog-aws', '~> 2.0.1'
+gem 'fog-aws', '~> 2.0.1', group: :exclude
 gem 'fog-core', '~> 1.44'
-gem 'fog-google', '~> 1.7.1'
+gem 'fog-google', '~> 1.7.1', group: :exclude
 gem 'fog-local', '~> 0.3'
-gem 'fog-openstack', '~> 0.1'
-gem 'fog-rackspace', '~> 0.1.1'
-gem 'fog-aliyun', '~> 0.2.0'
+gem 'fog-openstack', '~> 0.1', group: :exclude
+gem 'fog-rackspace', '~> 0.1.1', group: :exclude
+gem 'fog-aliyun', '~> 0.2.0', group: :exclude
 
 # for Google storage
-gem 'google-api-client', '~> 0.23'
+gem 'google-api-client', '~> 0.23', group: :exclude
 
 # for aws storage
-gem 'unf', '~> 0.1.4'
+gem 'unf', '~> 0.1.4', group: :exclude
 
 # Seed data
 gem 'seed-fu', '~> 2.3.7'
@@ -402,7 +402,7 @@ gem 'email_reply_trimmer', '~> 0.1'
 gem 'html2text'
 
 gem 'ruby-prof', '~> 0.17.0'
-gem 'rbtrace', '~> 0.4', require: false
+gem 'rbtrace', '~> 0.4', require: false, group: :exclude
 
 # OAuth
 gem 'oauth2', '~> 1.4'
