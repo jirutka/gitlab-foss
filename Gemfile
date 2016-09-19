@@ -442,7 +442,7 @@ gem 'health_check', '~> 2.6.0'
 
 # System information
 gem 'vmstat', '~> 2.3.0', group: :exclude
-gem 'sys-filesystem', '~> 1.1.6'
+gem 'sys-filesystem', '~> 1.1.6', group: :exclude
 
 # NTP client
 gem 'net-ntp', group: :exclude  # not used in code
