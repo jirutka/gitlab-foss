@@ -87,4 +87,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.eager_load = true
+
+  config.active_record.dump_schema_after_migration = false
 end
