@@ -76,4 +76,6 @@ Rails.application.configure do
   config.eager_load = true
 
   config.allow_concurrency = Gitlab::Runtime.multi_threaded?
+
+  config.active_record.dump_schema_after_migration = false
 end
