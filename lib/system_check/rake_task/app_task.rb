@@ -22,8 +22,6 @@ module SystemCheck
           SystemCheck::App::UploadsDirectoryExistsCheck,
           SystemCheck::App::UploadsPathPermissionCheck,
           SystemCheck::App::UploadsPathTmpPermissionCheck,
-          SystemCheck::App::SystemdUnitFilesOrInitScriptExistCheck,
-          SystemCheck::App::SystemdUnitFilesOrInitScriptUpToDateCheck,
           SystemCheck::App::ProjectsHaveNamespaceCheck,
           SystemCheck::App::RedisVersionCheck,
           SystemCheck::App::RubyVersionCheck,
