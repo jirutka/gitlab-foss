@@ -27,8 +27,8 @@ namespace :gitlab do
         SystemCheck::App::UploadsDirectoryExistsCheck,
         SystemCheck::App::UploadsPathPermissionCheck,
         SystemCheck::App::UploadsPathTmpPermissionCheck,
-        SystemCheck::App::InitScriptExistsCheck,
-        SystemCheck::App::InitScriptUpToDateCheck,
+        #SystemCheck::App::InitScriptExistsCheck,
+        #SystemCheck::App::InitScriptUpToDateCheck,
         SystemCheck::App::ProjectsHaveNamespaceCheck,
         SystemCheck::App::RedisVersionCheck,
         SystemCheck::App::RubyVersionCheck,
@@ -272,13 +272,6 @@ namespace :gitlab do
         puts "yes".color(:green)
       else
         puts "no".color(:red)
-        try_fixing_it(
-          sudo_gitlab("RAILS_ENV=production bin/background_jobs start")
-        )
-        for_more_information(
-          see_installation_guide_section("Install Init Script"),
-          "see log/sidekiq.log for possible errors"
-        )
         fix_and_rerun
       end
     end
