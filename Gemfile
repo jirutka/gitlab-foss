@@ -515,7 +515,9 @@ gem 'gitaly', '~> 15.1.0-rc1'
 # KAS GRPC protocol definitions
 gem 'kas-grpc', '~> 0.0.2'
 
-gem 'grpc', '~> 1.42.0'
+# This Google gem is totally messed, we must handle it specially.
+gem 'grpc', path: 'vendor/gems/grpc', require: false
+gem 'googleapis-common-protos-types', '~> 1.0'
 
 gem 'google-protobuf', '~> 3.19.0'
 
