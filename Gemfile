@@ -424,7 +424,8 @@ end
 
 # Gitaly GRPC client
 gem 'gitaly-proto', '~> 1.10.0', require: 'gitaly'
-gem 'grpc', '~> 1.15.0'
+# This Google gem is totally messed, we must handle it specially.
+gem 'grpc', path: 'vendor/gems/grpc', require: false
 
 gem 'google-protobuf', '~> 3.6'
 
