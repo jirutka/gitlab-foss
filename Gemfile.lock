@@ -46,6 +46,11 @@ PATH
       activesupport
       nokogiri (>= 1.4.4)
       omniauth (~> 1.0, < 3)
+PATH
+  remote: vendor/gems/grpc
+  specs:
+    grpc (1.42.0)
+      google-protobuf (~> 3.18)
 
 GEM
   remote: https://rubygems.org/
@@ -630,9 +635,6 @@ GEM
       graphql (~> 1.12)
       html-pipeline (~> 2.9)
       sass (~> 3.4)
-    grpc (1.42.0)
-      google-protobuf (~> 3.18)
-      googleapis-common-protos-types (~> 1.0)
     gssapi (1.2.0)
       ffi (>= 1.0.1)
     guard (2.16.2)
@@ -1592,6 +1594,7 @@ DEPENDENCIES
   gon (~> 6.4.0)
   google-api-client (~> 0.33)
   google-protobuf (~> 3.21)
+  googleapis-common-protos-types (~> 1.0)
   gpgme (~> 2.0.19)
   grape (~> 1.5.2)
   grape-entity (~> 0.10.0)
@@ -1602,7 +1605,7 @@ DEPENDENCIES
   graphlyte (~> 1.0.0)
   graphql (~> 1.13.12)
   graphql-docs (~> 2.1.0)
-  grpc (~> 1.42.0)
+  grpc!
   gssapi
   guard-rspec
   haml_lint (~> 0.36.0)
