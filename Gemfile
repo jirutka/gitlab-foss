@@ -360,4 +360,8 @@ gem 'sys-filesystem', '~> 1.1.6', group: :exclude
 # Gitaly GRPC client
 gem 'gitaly', '~> 0.5.0'
 
+# These Google gems are totally messed, we must handle them specially.
+gem 'grpc', path: 'vendor/gems/grpc', require: false
+gem 'google-protobuf', path: 'vendor/gems/google-protobuf', require: false
+
 gem 'toml-rb', '~> 0.3.15', require: false

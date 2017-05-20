@@ -1,3 +1,14 @@
+PATH
+  remote: vendor/gems/google-protobuf
+  specs:
+    google-protobuf (3.3.1)
+
+PATH
+  remote: vendor/gems/grpc
+  specs:
+    grpc (1.3.2)
+      google-protobuf (~> 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -308,7 +319,6 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
-    google-protobuf (3.2.0.2)
     googleauth (0.5.1)
       faraday (~> 0.9)
       jwt (~> 1.4)
@@ -330,9 +340,6 @@ GEM
     grape-entity (0.6.0)
       activesupport
       multi_json (>= 1.3.2)
-    grpc (1.1.2)
-      google-protobuf (~> 3.1)
-      googleauth (~> 0.5.1)
     haml (4.0.7)
       tilt
     haml_lint (0.21.0)
@@ -912,8 +919,10 @@ DEPENDENCIES
   gollum-rugged_adapter (~> 0.4.4)
   gon (~> 6.1.0)
   google-api-client (~> 0.8.6)
+  google-protobuf!
   grape (~> 0.19.0)
   grape-entity (~> 0.6.0)
+  grpc!
   haml_lint (~> 0.21.0)
   hamlit (~> 2.6.1)
   health_check (~> 2.6.0)
