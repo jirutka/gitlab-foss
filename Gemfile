@@ -406,6 +406,9 @@ end
 # Gitaly GRPC client
 gem 'gitaly-proto', '~> 0.64.0', require: 'gitaly'
 
+# This Google gem is totally messed, we must handle it specially.
+gem 'grpc', path: 'vendor/gems/grpc', require: false
+
 gem 'toml-rb', '~> 0.3.15', require: false
 
 # Feature toggles
