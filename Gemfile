@@ -389,6 +389,9 @@ gem 'sys-filesystem', '~> 1.1.6', group: :exclude
 # Gitaly GRPC client
 gem 'gitaly', '~> 0.14.0'
 
+# This Google gem is totally messed, we must handle it specially.
+gem 'grpc', path: 'vendor/gems/grpc', require: false
+
 gem 'toml-rb', '~> 0.3.15', require: false
 
 # Feature toggles
