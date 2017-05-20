@@ -459,7 +459,8 @@ end
 # Gitaly GRPC protocol definitions
 gem 'gitaly', '~> 12.9.0.pre.rc4'
 
-gem 'grpc', '~> 1.24.0'
+# This Google gem is totally messed, we must handle it specially.
+gem 'grpc', path: 'vendor/gems/grpc', require: false
 
 gem 'google-protobuf', '~> 3.8.0'
 
