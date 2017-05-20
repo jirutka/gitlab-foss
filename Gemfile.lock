@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/gems/grpc
+  specs:
+    grpc (1.11.0)
+      google-protobuf (~> 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -363,10 +369,6 @@ GEM
       railties
       sprockets-rails
     graphql (1.8.1)
-    grpc (1.11.0)
-      google-protobuf (~> 3.1)
-      googleapis-common-protos-types (~> 1.0.0)
-      googleauth (>= 0.5.1, < 0.7)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -1056,7 +1058,7 @@ DEPENDENCIES
   grape_logging (~> 1.7)
   graphiql-rails (~> 1.4.10)
   graphql (~> 1.8.0)
-  grpc (~> 1.11.0)
+  grpc!
   haml_lint (~> 0.26.0)
   hamlit (~> 2.8.8)
   hangouts-chat (~> 0.0.5)
