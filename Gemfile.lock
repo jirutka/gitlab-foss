@@ -978,7 +978,7 @@ DEPENDENCIES
   addressable (~> 2.5.2)
   akismet (~> 2.0)
   asana (~> 0.6.0)
-  asciidoctor (~> 1.5.6)
+  asciidoctor (~> 1.5.7.1)
   asciidoctor-plantuml (= 0.0.8)
   asset_sync (~> 2.4)
   attr_encrypted (~> 3.1.0)
