@@ -58,7 +58,7 @@ GEM
       faraday_middleware (~> 0.9)
       faraday_middleware-multi_json (~> 0.0)
       oauth2 (~> 1.0)
-    asciidoctor (1.5.3)
+    asciidoctor (1.5.6.1)
     asciidoctor-plantuml (0.0.7)
       asciidoctor (~> 1.5)
     ast (2.3.0)
