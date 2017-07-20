@@ -11,7 +11,7 @@ module Gitlab
     DEFAULT_ADOC_ATTRS = [
       'showtitle', 'idprefix=user-content-', 'idseparator=-', 'env=gitlab',
       'env-gitlab', 'source-highlighter=html-pipeline', 'icons=font',
-      'outfilesuffix=.adoc'
+      'outfilesuffix=.adoc', 'sectanchors'
     ].freeze
 
     # Public: Converts the provided Asciidoc markup into HTML.
