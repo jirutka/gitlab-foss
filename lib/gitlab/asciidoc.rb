@@ -8,7 +8,8 @@ module Gitlab
   module Asciidoc
     DEFAULT_ADOC_ATTRS = [
       'showtitle', 'idprefix=user-content-', 'idseparator=-', 'env=gitlab',
-      'env-gitlab', 'source-highlighter=html-pipeline', 'icons=font'
+      'env-gitlab', 'source-highlighter=html-pipeline', 'icons=font',
+      'sectanchors'
     ].freeze
 
     # Public: Converts the provided Asciidoc markup into HTML.
