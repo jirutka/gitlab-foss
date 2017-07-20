@@ -22,7 +22,8 @@ module Gitlab
         'source-highlighter' => 'gitlab-html-pipeline',
         'icons' => 'font',
         'outfilesuffix' => '.adoc',
-        'max-include-depth' => MAX_INCLUDE_DEPTH
+        'max-include-depth' => MAX_INCLUDE_DEPTH,
+        'sectanchors' => true
     }.freeze
 
     # Public: Converts the provided Asciidoc markup into HTML.
