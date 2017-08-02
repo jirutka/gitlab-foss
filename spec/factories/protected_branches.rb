@@ -25,5 +25,11 @@ FactoryGirl.define do
         protected_branch.push_access_levels.first.update!(access_level: Gitlab::Access::NO_ACCESS)
       end
     end
+
+    trait :no_one_can_merge do
+      after(:create) do |protected_branch|
+        protected_branch.merge_access_levels.first.update!(access_level: Gitlab::Access::NO_ACCESS)
+      end
+    end
   end
 end
