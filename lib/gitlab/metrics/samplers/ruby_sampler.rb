@@ -1,5 +1,3 @@
-require 'prometheus/client/support/unicorn'
-
 module Gitlab
   module Metrics
     module Samplers
@@ -68,7 +66,7 @@ module Gitlab
         end
 
         def worker_label
-          return {} unless defined?(Unicorn::Worker)
+          return {} unless defined?(Unicorn::Worker) && defined?(::Prometheus)
 
           worker_no = ::Prometheus::Client::Support::Unicorn.worker_id
 

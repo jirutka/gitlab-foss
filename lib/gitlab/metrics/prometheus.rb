@@ -1,5 +1,3 @@
-require 'prometheus/client'
-
 module Gitlab
   module Metrics
     module Prometheus
@@ -10,6 +8,8 @@ module Gitlab
       PROVIDER_MUTEX = Mutex.new
 
       def metrics_folder_present?
+        return false unless prometheus_metrics_enabled?
+
         multiprocess_files_dir = ::Prometheus::Client.configuration.multiprocess_files_dir
 
         multiprocess_files_dir &&
@@ -45,7 +45,8 @@ module Gitlab
         safe_provide_metric(:gauge, name, docstring, base_labels, multiprocess_mode)
       end
 
-      def histogram(name, docstring, base_labels = {}, buckets = ::Prometheus::Client::Histogram::DEFAULT_BUCKETS)
+      def histogram(name, docstring, base_labels = {}, buckets = nil)
+        buckets ||= ::Prometheus::Client::Histogram::DEFAULT_BUCKETS if defined?(::Prometheus::Client)
         safe_provide_metric(:histogram, name, docstring, base_labels, buckets)
       end
 
@@ -69,7 +70,7 @@ module Gitlab
       end
 
       def prometheus_metrics_enabled_unmemoized
-        metrics_folder_present? && current_application_settings[:prometheus_metrics_enabled] || false
+        current_application_settings[:prometheus_metrics_enabled] && metrics_folder_present? || false
       end
     end
   end
