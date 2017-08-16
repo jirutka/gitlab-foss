@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'prometheus/client/formats/text'
-
 class MetricsService
   def prometheus_metrics_text
+    return unless Gitlab::CurrentSettings.prometheus_metrics_enabled
+
     Prometheus::Client::Formats::Text.marshal_multiprocess(multiprocess_metrics_path)
   end
 

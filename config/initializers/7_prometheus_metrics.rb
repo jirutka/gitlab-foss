@@ -1,3 +1,4 @@
+begin
 require 'prometheus/client'
 
 # Keep separate directories for separate processes
@@ -98,4 +99,7 @@ if Gitlab::Runtime.web_server?
     # This does stop server, as it is running on master.
     Gitlab::Metrics::Exporter::WebExporter.instance.stop
   end
+end
+rescue LoadError
+  # skip if prometheus-client is not installed
 end
