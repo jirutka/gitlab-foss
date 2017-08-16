@@ -1,11 +1,11 @@
-require 'prometheus/client'
-
 module Gitlab
   module Metrics
     module Prometheus
       include Gitlab::CurrentSettings
 
       def metrics_folder_present?
+        return false unless prometheus_metrics_enabled?
+
         multiprocess_files_dir = ::Prometheus::Client.configuration.multiprocess_files_dir
 
         multiprocess_files_dir &&
@@ -50,7 +50,7 @@ module Gitlab
       private
 
       def prometheus_metrics_enabled_unmemoized
-        metrics_folder_present? && current_application_settings[:prometheus_metrics_enabled] || false
+        current_application_settings[:prometheus_metrics_enabled] && metrics_folder_present? || false
       end
     end
   end

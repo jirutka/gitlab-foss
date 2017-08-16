@@ -1,6 +1,6 @@
-require 'prometheus/client/formats/text'
-
 class MetricsService
+  include Gitlab::CurrentSettings
+
   CHECKS = [
     Gitlab::HealthChecks::DbCheck,
     Gitlab::HealthChecks::RedisCheck,
@@ -8,6 +8,8 @@ class MetricsService
   ].freeze
 
   def prometheus_metrics_text
+    return unless current_application_settings[:prometheus_metrics_enabled]
+
     Prometheus::Client::Formats::Text.marshal_multiprocess(multiprocess_metrics_path)
   end
 
