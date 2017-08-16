@@ -1,5 +1,4 @@
 require 'webrick'
-require 'prometheus/client/rack/exporter'
 
 module Gitlab
   module Metrics
