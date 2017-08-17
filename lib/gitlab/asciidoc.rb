@@ -23,7 +23,7 @@ module Gitlab
         include_processor GitlabIncludeProcessor.new(context)
       end
 
-      asciidoc_opts = { safe: :secure,
+      asciidoc_opts = { safe: :server,
                         backend: :gitlab_html5,
                         attributes: DEFAULT_ADOC_ATTRS,
                         extensions: extensions }
