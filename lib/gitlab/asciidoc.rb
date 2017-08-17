@@ -49,7 +49,7 @@ module Gitlab
       end
 
       extra_attrs = path_attrs(context[:requested_path])
-      asciidoc_opts = { safe: :secure,
+      asciidoc_opts = { safe: :server,
                         backend: :gitlab_html5,
                         attributes: DEFAULT_ADOC_ATTRS.merge(extra_attrs),
                         extensions: extensions }
