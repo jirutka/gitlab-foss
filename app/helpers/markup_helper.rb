@@ -221,6 +221,11 @@ module MarkupHelper
   end
 
   def asciidoc_unsafe(text, context = {})
+    context.merge!(
+      commit:         @commit,
+      ref:            @ref,
+      requested_path: @path
+    )
     Gitlab::Asciidoc.render(text, context)
   end
 
