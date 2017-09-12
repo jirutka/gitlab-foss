@@ -1,6 +1,8 @@
 require 'asciidoctor'
-require 'asciidoctor/converter/html5'
+require 'asciidoctor/extensions'
+require 'asciidoctor-html5s'
 require "asciidoctor-plantuml"
+require 'asciidoctor/rouge/treeprocessor'
 
 module Gitlab
   # Parser/renderer for the AsciiDoc format that uses Asciidoctor and filters
@@ -10,9 +12,16 @@ module Gitlab
 
     DEFAULT_ADOC_ATTRS = [
       'showtitle', 'idprefix=user-content-', 'idseparator=-', 'env=gitlab',
-      'env-gitlab', 'source-highlighter=html-pipeline', 'icons=font',
+      'env-gitlab', 'source-highlighter=rouge', 'icons=font',
       'outfilesuffix=.adoc', 'sectanchors'
     ].freeze
+
+    Asciidoctor::Extensions.register do
+      treeprocessor Asciidoctor::Rouge::Treeprocessor.new(formatter_opts: {
+        line_id: 'LC%i',
+        highlighted_class: 'hll'
+      })
+    end
 
     # Public: Converts the provided Asciidoc markup into HTML.
     #
@@ -41,7 +50,7 @@ module Gitlab
       end
     end
 
-    class Html5Converter < Asciidoctor::Converter::Html5Converter
+    class Html5Converter < Asciidoctor::Html5s::Converter
       extend Asciidoctor::Converter::Config
 
       register_for 'gitlab_html5'
