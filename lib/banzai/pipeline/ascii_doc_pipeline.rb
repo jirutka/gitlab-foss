@@ -7,7 +7,6 @@ module Banzai
         FilterArray[
           Filter::AsciiDocSanitizationFilter,
           Filter::AssetProxyFilter,
-          Filter::SyntaxHighlightFilter,
           Filter::ExternalLinkFilter,
           Filter::PlantumlFilter,
           Filter::ColorFilter,

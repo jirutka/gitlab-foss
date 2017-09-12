@@ -1,0 +1,211 @@
+// Rules for asciidoctor-html5s converter.
+
+.md {
+  @mixin black-circle-bg {
+    display: inline-block;
+    background-color: $black;
+    border-radius: 50%;
+    color: $white;
+    text-align: center;
+    font-size: 0.85em;
+    line-height: 1.4em;
+    height: 1.4em;
+    width: 1.4em;
+  }
+
+  .doc-section {
+    // This substitutes margin-top on h1-6 that is zeroed by :first-child rule.
+    margin-top: 24px;
+  }
+
+  .block-title {
+    font-size: 1em;
+    margin: ($gl-padding / 2) 0;
+  }
+
+  .toc {
+    margin: $gl-padding 0;
+  }
+
+  .toc-list {
+    list-style-type: none;
+    margin: 0;
+
+    li:before {
+      content: "›\00a0";
+      margin-left: -$gl-padding;
+    }
+  }
+
+  figure {
+    margin: ($gl-padding * 1.5) 0;
+
+    // FIXME
+    & > img,
+    & > a > img {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  figcaption {
+    font-size: 1em !important;  // override typography.scss
+    font-weight: 600;
+    margin: ($gl-padding / 2) 0;
+  }
+
+  // FIXME
+  figcaption + *,
+  .block-title + * {
+    margin-top: 0 !important;
+  }
+
+  // Override some extern rule that mess with footer.
+  blockquote > footer {
+    color: inherit;
+
+    &:before {
+      content: normal;
+    }
+  }
+
+  dt {
+    margin-bottom: $gl-padding / 2;
+  }
+
+  dd {
+    margin-left: 1em;
+  }
+
+  // Example: [line-through]#strike this#
+  // or alternatively: [del]#strike this# (non-standard, but shorter)
+  span.line-through,
+  span.del {
+    text-decoration: line-through;
+  }
+
+  // Code callout (a mark inside the code).
+  .code b.conum {
+    @include black-circle-bg;
+    font-weight: normal;
+    font-family: $regular_font;
+  }
+
+  // Code callouts list, styled as numbers in black circles.
+  .callout-list {
+    counter-reset: callout-list;
+    list-style-type: none;
+    margin-top: -$gl-padding / 2;
+    margin-bottom: $gl-padding * 1.5;
+
+    & > li:before {
+      @include black-circle-bg;
+      content: counter(callout-list);
+      counter-increment: callout-list;
+      margin-left: -2em;
+      margin-right: 0.6em;
+    }
+  }
+
+  .example-block > .example {
+    background-color: $gray-normal;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-default;
+    padding: $gl-padding;
+    padding-bottom: 0;
+    margin: $gl-padding 0;
+  }
+
+  .admonition-block {
+    border: 1px solid $border-color;
+    border-radius: $border-radius-default;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $gl-padding;
+    padding: $gl-padding $gl-padding 0 4.2em;
+    position: relative;
+    width: 100%;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -0.25em;
+      margin: auto 0;
+      height: 1.8em;
+      width: 3em;
+
+      font-size: 1.8em;
+      line-height: 1.8em;
+      text-align: center;
+    }
+
+    &.note,
+    &.tip {
+      background-color: #ffffef;
+    }
+
+    &.warning,
+    &.caution,
+    &.important {
+      background-color: #ffefef;
+    }
+
+    &.note:before {
+      content: asset_url('icons-stacked.svg#information-o');
+    }
+
+    &.tip:before {
+      content: asset_url('icons-stacked.svg#bulb');
+    }
+
+    &.warning:before {
+      content: asset_url('icons-stacked.svg#warning-solid');
+    }
+
+    &.caution:before {
+      content: asset_url('icons-stacked.svg#fire');
+    }
+
+    &.important:before {
+      content: asset_url('icons-stacked.svg#issue-type-incident');
+    }
+
+    .block-title {
+      margin-bottom: $gl-padding;
+    }
+
+    // e.g. "Warning: "
+    .block-title.label-only,
+    .title-label {
+      display: none;
+    }
+  }
+
+  // https://gist.github.com/jirutka/32049196ab75547b7f47
+  .decimal-nested {
+    ol {
+      list-style-type: none;
+      counter-reset: item;
+      margin: 0;
+    }
+
+    ol > li {
+      display: table;
+      counter-increment: item;
+
+      &:before {
+        content: counters(item, ".") ". ";
+        display: table-cell;
+        padding-right: 0.6em;
+      }
+    }
+
+    li ol > li {
+      margin: 0;
+
+      &:before {
+        content: counters(item, ".") " ";
+      }
+    }
+  }
+}
