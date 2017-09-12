@@ -21,7 +21,7 @@ module Gitlab
         'idseparator' => '-',
         'env' => 'gitlab',
         'env-gitlab' => '',
-        'source-highlighter' => 'gitlab-html-pipeline',
+        'source-highlighter' => 'rouge',
         'icons' => 'font',
         'outfilesuffix' => '.adoc',
         'max-include-depth' => MAX_INCLUDE_DEPTH,
