@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'asciidoctor'
+require 'asciidoctor-html5s'
 
 module Gitlab
   module Asciidoc
-    class Html5Converter < (Asciidoctor::Converter.for 'html5')
+    class Html5Converter < Asciidoctor::Html5s::Converter
       register_for 'gitlab_html5'
 
       def convert_stem(node)
