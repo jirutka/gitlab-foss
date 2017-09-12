@@ -3,7 +3,6 @@ module Banzai
     class AsciiDocPipeline < BasePipeline
       def self.filters
         FilterArray[
-          Filter::SanitizationFilter,
           Filter::ExternalLinkFilter,
           Filter::PlantumlFilter,
           Filter::AsciiDocPostProcessingFilter
