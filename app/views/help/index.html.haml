@@ -8,7 +8,7 @@
   %h1.gl-mt-5.gl-mb-3
     = default_brand_title
     - if user_signed_in?
-      %span= link_to_version
+      %span= Gitlab::VERSION
   - if show_version_check?
     %span.gl-mt-5.gl-mb-3.gl-ml-3
       .js-gitlab-version-check{ data: { "size": "lg" } }
