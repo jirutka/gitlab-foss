@@ -7,7 +7,7 @@
 %h1
   = default_brand_title
   - if user_signed_in?
-    %span= link_to_version
+    %span= Gitlab::VERSION
     = version_status_badge
   %hr
 
