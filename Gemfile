@@ -122,6 +122,7 @@ gem 'wikicloth', '0.8.1'
 gem 'asciidoctor', '~> 1.5.2'
 gem 'asciidoctor-html5s', '= 0.1.0.beta.4'
 gem 'asciidoctor-plantuml', '0.0.7'
+gem 'asciidoctor-include-ext', '~> 0.1.1', require: false
 gem 'asciidoctor-rouge', '~> 0.2.0', require: false
 gem 'rouge', '~> 2.0'
 gem 'truncato', '~> 0.7.9'

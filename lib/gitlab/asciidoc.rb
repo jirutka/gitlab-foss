@@ -2,6 +2,7 @@ require 'asciidoctor'
 require 'asciidoctor/extensions'
 require 'asciidoctor-html5s'
 require "asciidoctor-plantuml"
+require 'asciidoctor/include_ext/include_processor'
 require 'asciidoctor/rouge/treeprocessor'
 
 module Gitlab
@@ -80,9 +81,10 @@ module Gitlab
 
     # Asciidoctor extension for processing includes (macro include::[]) within
     # documents inside the same repository.
-    class GitlabIncludeProcessor < Asciidoctor::Extensions::IncludeProcessor
-      def initialize(context, config = {})
-        super(config)
+    class GitlabIncludeProcessor < Asciidoctor::IncludeExt::IncludeProcessor
+      # Overrides super class method.
+      def initialize(context)
+        super(logger: Gitlab::AppLogger)
 
         @context = context
         @repository = context[:project].try(:repository)
@@ -94,34 +96,38 @@ module Gitlab
         }
       end
 
-      def process(doc, reader, target, attributes)
-        return reader unless @repository.try(:exists?)
+      protected
 
-        # Resolve relative target path against the requested path (path of the
-        # file user wants to see), or against path of the currently processed
-        # include if processing nested include (i.e. A includes B,
-        # B includes C, ...).
+      # Overrides super class method.
+      def resolve_target_path(target, reader)
+        return unless @repository.try(:exists?)
+
         base_path = reader.include_stack.empty? ? requested_path : reader.file
         path = resolve_relative_path(target, base_path)
 
-        blob = @repository.blob_at(ref, path)
-        error = if blob.nil?
-                  'Unresolved path'
-                elsif !blob.readable_text?
-                  'File not readable'
-                elsif reader.exceeded_max_depth?
-                  'Maximum depth exceeded'
-                end
-        if error
-          reader.replace_line("*[ERROR: include::#{target}[] - #{error}]*")
-        else
-          reader.push_include(blob.data, path, target, 1, attributes)
-        end
-
-        reader
+        path if Gitlab::Git::Blob.find(@repository, ref, path)
       end
 
-      protected
+      # Overrides super class method.
+      def read_lines(filename, selector)
+        blob = @repository.blob_at(ref, filename)
+
+        raise 'Blob not found' unless blob
+        raise 'File is not readable' unless blob.readable_text?
+
+        if selector
+          blob.data.each_line.select.with_index(1, &selector)
+        else
+          blob.data
+        end
+      end
+
+      # Overrides super class method.
+      def unresolved_include!(target, reader)
+        reader.unshift_line("*[ERROR: include::#{target}[] - unresolved directive]*")
+      end
+
+      private
 
       # Resolves the given relative path of file in repository into canonical
       # path based on the specified base_path.
