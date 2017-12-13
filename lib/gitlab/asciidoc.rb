@@ -12,7 +12,7 @@ module Gitlab
     DEFAULT_ADOC_ATTRS = [
       'showtitle', 'idprefix=user-content-', 'idseparator=-', 'env=gitlab',
       'env-gitlab', 'source-highlighter=rouge', 'icons=font',
-      'sectanchors'
+      'sectanchors', 'outfilesuffix=.adoc'
     ].freeze
 
     Asciidoctor::Extensions.register do
