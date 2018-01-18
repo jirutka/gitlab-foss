@@ -6,7 +6,7 @@ module Gitlab
   module FileDetector
     PATTERNS = {
       # Project files
-      readme: /\Areadme[^\/]*\z/i,
+      readme: /\A(readme|index)[^\/]*\z/i,
       changelog: /\A(changelog|history|changes|news)[^\/]*\z/i,
       license: /\A(licen[sc]e|copying)(\.[^\/]+)?\z/i,
       contributing: /\Acontributing[^\/]*\z/i,
