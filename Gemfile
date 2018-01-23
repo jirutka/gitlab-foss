@@ -119,7 +119,7 @@ gem 'rdoc', '~> 4.2'
 gem 'org-ruby', '~> 0.9.12'
 gem 'creole', '~> 0.5.0'
 gem 'wikicloth', '0.8.1'
-gem 'asciidoctor', '~> 1.5.2'
+gem 'asciidoctor', github: 'asciidoctor/asciidoctor', ref: '6eff25d'
 gem 'asciidoctor-html5s', '= 0.1.0.beta.4'
 gem 'asciidoctor-plantuml', '0.0.7'
 gem 'asciidoctor-include-ext', '~> 0.1.1', require: false

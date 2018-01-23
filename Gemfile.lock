@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/asciidoctor/asciidoctor.git
+  revision: 6eff25d85e4b3da76a532cda6c42ee985ea6cc68
+  ref: 6eff25d
+  specs:
+    asciidoctor (1.5.7.dev)
+
 PATH
   remote: vendor/gems/grpc
   specs:
@@ -58,7 +65,6 @@ GEM
       faraday_middleware (~> 0.9)
       faraday_middleware-multi_json (~> 0.0)
       oauth2 (~> 1.0)
-    asciidoctor (1.5.6.1)
     asciidoctor-html5s (0.1.0.beta.4)
       asciidoctor (~> 1.5.5)
       thread_safe (~> 0.3.4)
@@ -922,6 +928,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor!
   RedCloth (~> 4.3.2)
   ace-rails-ap (~> 4.1.0)
   activerecord_sane_schema_dumper (= 0.2)
@@ -931,7 +938,6 @@ DEPENDENCIES
   akismet (~> 2.0)
   allocations (~> 1.0)
   asana (~> 0.6.0)
-  asciidoctor (~> 1.5.2)
   asciidoctor-html5s (= 0.1.0.beta.4)
   asciidoctor-include-ext (~> 0.1.1)
   asciidoctor-plantuml (= 0.0.7)
