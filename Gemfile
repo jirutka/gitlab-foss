@@ -147,6 +147,7 @@ gem 'wikicloth', '0.8.1'
 gem 'asciidoctor', '~> 1.5.7.1'
 gem 'asciidoctor-html5s', '= 0.1.0.beta.9'
 gem 'asciidoctor-include-ext', '~> 0.3.0', require: false
+gem 'asciidoctor-interdoc-reftext', '~> 0.4.1', require: false
 gem 'asciidoctor-plantuml', '0.0.8'
 gem 'asciidoctor-rouge', '~> 0.3.2', require: false
 gem 'rouge', '~> 3.1'
