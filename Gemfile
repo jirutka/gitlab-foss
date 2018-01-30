@@ -123,6 +123,7 @@ gem 'asciidoctor', github: 'asciidoctor/asciidoctor', ref: '6eff25d'
 gem 'asciidoctor-html5s', '= 0.1.0.beta.4'
 gem 'asciidoctor-plantuml', '0.0.7'
 gem 'asciidoctor-include-ext', '~> 0.1.1', require: false
+gem 'asciidoctor-interdoc-reftext', '~> 0.1.0', require: false
 gem 'asciidoctor-rouge', '~> 0.2.0', require: false
 gem 'rouge', '~> 2.0'
 gem 'truncato', '~> 0.7.9'
