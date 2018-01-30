@@ -8,6 +8,10 @@ require 'gitlab/asciidoc/html5_converter'
 require 'gitlab/asciidoc/mermaid_block_processor'
 require 'gitlab/asciidoc/syntax_highlighter/html_pipeline_adapter'
 
+require 'asciidoctor/interdoc_reftext/processor'
+require 'gitlab/asciidoc/interdoc_reftext_resolver'
+require 'gitlab/asciidoc/repository_tree'
+
 module Gitlab
   # Parser/renderer for the AsciiDoc format that uses Asciidoctor and filters
   # the resulting HTML through HTML pipeline filters.
@@ -59,6 +63,11 @@ module Gitlab
         ::Gitlab::Kroki.formats(Gitlab::CurrentSettings).each do |name|
           block ::AsciidoctorExtensions::KrokiBlockProcessor, name
         end
+
+        tree_processor ::Asciidoctor::InterdocReftext::Processor.new(
+          resolver_class: InterdocReftextResolver,
+          repository_tree: RepositoryTree.new(context)
+        )
       end
 
       extra_attrs = path_attrs(context[:requested_path])

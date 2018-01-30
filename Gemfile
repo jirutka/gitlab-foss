@@ -190,6 +190,7 @@ gem 'bootstrap_form', '~> 4.2.0'
 gem 'nokogiri', '~> 1.13.0'
 gem 'escape_utils', '~> 1.1'
 
+gem 'asciidoctor-interdoc-reftext', '~> 0.5.2', require: false
 gem 'asciidoctor-html5s', '~> 0.5.1'
 
 # Calendar rendering
