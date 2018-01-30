@@ -3,6 +3,7 @@ require 'asciidoctor/extensions'
 require 'asciidoctor-html5s'
 require "asciidoctor-plantuml"
 require 'asciidoctor/include_ext/include_processor'
+require 'asciidoctor/interdoc_reftext/processor'
 require 'asciidoctor/rouge/treeprocessor'
 
 module Gitlab
@@ -34,6 +35,11 @@ module Gitlab
 
       extensions = proc do
         include_processor GitlabIncludeProcessor.new(repository_tree)
+
+        tree_processor ::Asciidoctor::InterdocReftext::Processor.new(
+          resolver_class: GitlabInterdocReftextResolver,
+          repository_tree: repository_tree
+        )
       end
 
       asciidoc_opts = { safe: :server,
@@ -196,6 +202,27 @@ module Gitlab
       # Overrides super class method.
       def unresolved_include!(target, reader)
         reader.unshift_line("*[ERROR: include::#{target}[] - unresolved directive]*")
+      end
+    end
+
+    # Resolver of implicit reference text (label) for inter-document cross references.
+    class GitlabInterdocReftextResolver < Asciidoctor::InterdocReftext::Resolver
+      # Overrides super class method.
+      def initialize(document, repository_tree:, **)
+        super(document, logger: Gitlab::AppLogger, raise_exceptions: false)
+        @repository_tree = repository_tree
+      end
+
+      protected
+
+      # Overrides super class method.
+      def resolve_target_path(target_path)
+        @repository_tree.resolve_file_path(target_path + '.adoc')
+      end
+
+      # Overrides super class method.
+      def read_file(filename)
+        @repository_tree.read_file(filename).try(:each_line)
       end
     end
   end
