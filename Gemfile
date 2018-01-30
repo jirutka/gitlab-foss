@@ -151,6 +151,7 @@ gem 'wikicloth', '0.8.1'
 gem 'asciidoctor', '~> 2.0.10'
 gem 'asciidoctor-html5s', '~> 0.2.0'
 gem 'asciidoctor-include-ext', '~> 0.3.1', require: false
+gem 'asciidoctor-interdoc-reftext', '~> 0.5.0', require: false
 gem 'asciidoctor-plantuml', '0.0.10'
 gem 'rouge', '~> 3.18.0'
 gem 'truncato', '~> 0.7.11'
