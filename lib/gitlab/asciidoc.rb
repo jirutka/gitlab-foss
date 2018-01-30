@@ -3,7 +3,10 @@
 require 'asciidoctor'
 require 'asciidoctor-plantuml'
 require 'asciidoctor/extensions'
+require 'asciidoctor/interdoc_reftext/processor'
 require 'gitlab/asciidoc/html5_converter'
+require 'gitlab/asciidoc/interdoc_reftext_resolver'
+require 'gitlab/asciidoc/repository_tree'
 require 'gitlab/asciidoc/syntax_highlighter/html_pipeline_adapter'
 
 module Gitlab
@@ -34,6 +37,11 @@ module Gitlab
     def self.render(input, context)
       extensions = proc do
         include_processor ::Gitlab::Asciidoc::IncludeProcessor.new(context)
+
+        tree_processor ::Asciidoctor::InterdocReftext::Processor.new(
+          resolver_class: InterdocReftextResolver,
+          repository_tree: RepositoryTree.new(context)
+        )
       end
 
       asciidoc_opts = { safe: :server,
