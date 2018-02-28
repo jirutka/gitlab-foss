@@ -283,6 +283,7 @@ module MarkupHelper
 
   def asciidoc_unsafe(text, context = {})
     context.reverse_merge!(
+      current_user: (current_user if defined?(current_user)),
       commit: @commit,
       ref: @ref,
       requested_path: @path
