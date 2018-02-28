@@ -40,9 +40,25 @@ module Gitlab
         )
       end
 
+      attributes = if (project = context[:project])
+        {
+          'gl-commit-ref' => context[:ref] || context[:project].default_branch,
+          'gl-project-namespace' => project.namespace.full_path,
+          'gl-project-path' => project.full_path,
+          'gl-project-title' => project.title,
+          'gl-project-url' => project.web_url,
+          'gl-repo-http-url' => project.http_url_to_repo,
+          'gl-repo-ssh-url' => project.ssh_url_to_repo,
+          'gl-server-host' => Gitlab.config.gitlab.host,
+          'gl-server-url' => Gitlab.config.gitlab.base_url,
+        }.map { |k, v| "#{k}=#{v}" }
+      else
+        []
+      end
+
       asciidoc_opts = { safe: :server,
                         backend: :gitlab_html5,
-                        attributes: DEFAULT_ADOC_ATTRS,
+                        attributes: DEFAULT_ADOC_ATTRS + attributes,
                         extensions: extensions }
 
       context[:pipeline] = :ascii_doc
