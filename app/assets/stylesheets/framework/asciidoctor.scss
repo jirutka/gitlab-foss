@@ -78,6 +78,13 @@
     @extend .fa-angle-right;
   }
 
+  // Example: [line-through]#strike this#
+  // or alternatively: [del]#strike this# (non-standard, but shorter)
+  span.line-through,
+  span.del {
+    text-decoration: line-through;
+  }
+
   // Code callout (a mark inside the code).
   .code b.conum {
     @include black-circle-bg;
