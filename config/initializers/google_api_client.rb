@@ -9,6 +9,7 @@
 # See https://gitlab.com/gitlab-org/gitlab/issues/31280 for more details.
 #
 
+begin
 require 'google/apis/container_v1beta1'
 require 'google/apis/options'
 
@@ -20,4 +21,7 @@ Google::Apis::RequestOptions.default.retries = 3 if Gitlab::Utils.to_boolean(ENV
 Google::Apis::ContainerV1beta1::AddonsConfig::Representation.tap do |representation|
   representation.hash :cloud_run_config, as: 'cloudRunConfig'
   representation.hash :istio_config, as: 'istioConfig'
+end
+rescue LoadError
+  # skip if google_apis is not installed
 end
