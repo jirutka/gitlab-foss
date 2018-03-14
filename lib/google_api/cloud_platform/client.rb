@@ -1,14 +1,6 @@
 # frozen_string_literal: true
 
 require 'securerandom'
-require 'google/apis/compute_v1'
-require 'google/apis/container_v1'
-require 'google/apis/container_v1beta1'
-require 'google/apis/cloudbilling_v1'
-require 'google/apis/cloudresourcemanager_v1'
-require 'google/apis/iam_v1'
-require 'google/apis/serviceusage_v1'
-require 'google/apis/sqladmin_v1beta4'
 
 module GoogleApi
   module CloudPlatform
@@ -43,6 +35,19 @@ module GoogleApi
         def session_key_for_redirect_uri(state)
           "cloud_platform_second_redirect_uri_#{state}"
         end
+      end
+
+      def initialize
+        require 'google/apis/compute_v1'
+        require 'google/apis/container_v1'
+        require 'google/apis/container_v1beta1'
+        require 'google/apis/cloudbilling_v1'
+        require 'google/apis/cloudresourcemanager_v1'
+        require 'google/apis/iam_v1'
+        require 'google/apis/serviceusage_v1'
+        require 'google/apis/sqladmin_v1beta4'
+
+        super
       end
 
       def scope
