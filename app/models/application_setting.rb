@@ -16,7 +16,7 @@ class ApplicationSetting < ActiveRecord::Base
   # Setting a key restriction to `-1` means that all keys of this type are
   # forbidden.
   FORBIDDEN_KEY_VALUE = KeyRestrictionValidator::FORBIDDEN
-  SUPPORTED_KEY_TYPES = %i[rsa dsa ecdsa ed25519].freeze
+  SUPPORTED_KEY_TYPES = Gitlab::SSHPublicKey::Technologies.map(&:name).freeze
 
   serialize :restricted_visibility_levels # rubocop:disable Cop/ActiveRecordSerialize
   serialize :import_sources # rubocop:disable Cop/ActiveRecordSerialize
