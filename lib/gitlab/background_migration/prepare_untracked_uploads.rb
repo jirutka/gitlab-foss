@@ -108,7 +108,7 @@ module Gitlab
                  -print0]
 
         ionice = which_ionice
-        cmd = %W[#{ionice} -c Idle] + cmd if ionice
+        cmd = %W[#{ionice} -c 3] + cmd if ionice
 
         log_msg = "PrepareUntrackedUploads find command: \"#{cmd.join(' ')}\""
         Rails.logger.info log_msg # rubocop:disable Gitlab/RailsLogger
