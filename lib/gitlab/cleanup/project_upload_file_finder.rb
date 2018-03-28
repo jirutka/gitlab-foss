@@ -46,7 +46,7 @@ module Gitlab
                  -print0]
 
         ionice = which_ionice
-        cmd = %W[#{ionice} -c Idle] + cmd if ionice
+        cmd = %W[#{ionice} -c 3] + cmd if ionice
 
         log_msg = "find command: \"#{cmd.join(' ')}\""
         Gitlab::AppLogger.info log_msg
