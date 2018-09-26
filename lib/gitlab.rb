@@ -14,13 +14,7 @@ module Gitlab
       if File.exist?(root.join("REVISION"))
         File.read(root.join("REVISION")).strip.freeze
       else
-        result = Gitlab::Popen.popen_with_detail(%W[#{config.git.bin_path} log --pretty=format:%h -n 1])
-
-        if result.status.success?
-          result.stdout.chomp.freeze
-        else
-          "Unknown".freeze
-        end
+        "Unknown".freeze
       end
     end
   end
