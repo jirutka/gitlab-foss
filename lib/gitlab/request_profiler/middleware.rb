@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'ruby-prof'
-require 'memory_profiler'
-
 module Gitlab
   module RequestProfiler
     class Middleware
@@ -49,6 +46,8 @@ module Gitlab
       end
 
       def call_with_call_stack_profiling(env)
+        require 'ruby-prof'
+
         ret = nil
         report = RubyProf::Profile.profile do
           ret = catch(:warden) do
@@ -65,6 +64,8 @@ module Gitlab
       end
 
       def call_with_memory_profiling(env)
+        require 'memory_profiler'
+
         ret = nil
         report = MemoryProfiler.report do
           ret = catch(:warden) do

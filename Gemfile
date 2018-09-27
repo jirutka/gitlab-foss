@@ -428,9 +428,9 @@ gem 'mail_room', '~> 0.10.0'
 gem 'email_reply_trimmer', '~> 0.1'
 gem 'html2text'
 
-gem 'ruby-prof', '~> 1.0.0'
+gem 'ruby-prof', '~> 1.0.0', group: :development
 gem 'rbtrace', '~> 0.4', require: false, group: :exclude
-gem 'memory_profiler', '~> 0.9', require: false
+gem 'memory_profiler', '~> 0.9', require: false, group: :development
 gem 'benchmark-memory', '~> 0.1', require: false, group: :exclude
 gem 'activerecord-explain-analyze', '~> 0.1', require: false, group: :exclude
 
