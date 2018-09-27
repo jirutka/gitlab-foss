@@ -1,5 +1,3 @@
-require 'ruby-prof'
-
 module Gitlab
   module RequestProfiler
     class Middleware

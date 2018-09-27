@@ -34,6 +34,6 @@ module Gitlab
           ]
         end
       end
-    end
+    end if defined?(RubyProf)
   end
 end

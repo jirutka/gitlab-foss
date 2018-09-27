@@ -403,7 +403,7 @@ gem 'mail_room', '~> 0.9.1'
 gem 'email_reply_trimmer', '~> 0.1'
 gem 'html2text'
 
-gem 'ruby-prof', '~> 0.17.0'
+gem 'ruby-prof', '~> 0.17.0', group: :development
 gem 'rbtrace', '~> 0.4', require: false, group: :exclude
 
 # OAuth
