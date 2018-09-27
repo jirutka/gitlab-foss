@@ -113,7 +113,7 @@ gem 'carrierwave', '= 1.2.3'
 gem 'mini_magick'
 
 # Drag and Drop UI
-gem 'dropzonejs-rails', '~> 0.7.1'
+gem 'dropzonejs-rails', '~> 0.7.1', group: :assets
 
 # for backups
 gem 'fog-aws', '~> 2.0.1'
@@ -248,10 +248,10 @@ gem 'licensee', '~> 8.9'
 gem 'rack-attack', '~> 4.4.1'
 
 # Ace editor
-gem 'ace-rails-ap', '~> 4.1.0'
+gem 'ace-rails-ap', '~> 4.1.0', group: :assets
 
 # Keyboard shortcuts
-gem 'mousetrap-rails', '~> 1.4.6'
+gem 'mousetrap-rails', '~> 1.4.6', group: :assets
 
 # Detect and convert string character encoding
 gem 'charlock_holmes', '~> 0.7.5'
@@ -266,16 +266,16 @@ gem 'chronic_duration', '~> 0.10.6'
 gem 'webpack-rails', '~> 0.9.10'
 gem 'rack-proxy', '~> 0.6.0'
 
-gem 'sass-rails', '~> 5.0.6'
-gem 'uglifier', '~> 2.7.2'
+gem 'sass-rails', '~> 5.0.6', group: :assets
+gem 'uglifier', '~> 2.7.2', group: :assets
 
 gem 'addressable', '~> 2.5.2'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'gemojione', '~> 3.3'
 gem 'gon', '~> 6.2'
-gem 'jquery-atwho-rails', '~> 1.3.2'
+gem 'jquery-atwho-rails', '~> 1.3.2', group: :assets
 gem 'request_store', '~> 1.3'
-gem 'select2-rails', '~> 3.5.9'
+gem 'select2-rails', '~> 3.5.9', group: :assets
 gem 'virtus', '~> 1.0.1'
 gem 'base32', '~> 0.3.0'
 
@@ -285,10 +285,10 @@ gem 'sentry-raven', '~> 2.7'
 gem 'premailer-rails', '~> 1.9.7'
 
 # I18n
-gem 'ruby_parser', '~> 3.8', require: false
+gem 'ruby_parser', '~> 3.8', require: false, group: :assets
 gem 'rails-i18n', gem_versions['rails-i18n']
 gem 'gettext_i18n_rails', '~> 1.8.0'
-gem 'gettext_i18n_rails_js', '~> 1.3'
+gem 'gettext_i18n_rails_js', '~> 1.3', group: :assets
 gem 'gettext', '~> 3.2.2', require: false, group: :development
 
 gem 'batch-loader', '~> 1.2.1'
