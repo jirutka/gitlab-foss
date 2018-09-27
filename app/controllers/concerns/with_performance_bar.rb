@@ -2,7 +2,7 @@ module WithPerformanceBar
   extend ActiveSupport::Concern
 
   included do
-    include Peek::Rblineprof::CustomControllerHelpers
+    include Peek::Rblineprof::CustomControllerHelpers if defined?(::Peek::Railtie)
   end
 
   def peek_enabled?

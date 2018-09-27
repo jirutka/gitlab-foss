@@ -4,6 +4,6 @@ module Peek
       def results
         { hostname: Gitlab::Environment.hostname }
       end
-    end
+    end if defined?(View)
   end
 end
