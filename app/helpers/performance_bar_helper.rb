@@ -4,4 +4,10 @@ module PerformanceBarHelper
   def performance_bar_enabled?
     peek_enabled?
   end
+
+  # patched: This substitutes the same name helper method from
+  # Peek::ControllerHelpers (peek gem).
+  def peek_enabled?
+    defined?(Peek::ControllerHelpers) && Peek.enabled?
+  end
 end
