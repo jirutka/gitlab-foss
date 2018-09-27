@@ -48,6 +48,6 @@ module Peek
           ::Gitlab::GitalyClient.query_time = 0
         end
       end
-    end
+    end if defined?(View)
   end
 end
