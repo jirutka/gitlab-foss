@@ -9,6 +9,6 @@ module Peek
           canary: Gitlab::Utils.to_boolean(ENV['CANARY'])
         }
       end
-    end
+    end if defined?(View)
   end
 end

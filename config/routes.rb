@@ -59,7 +59,7 @@ Rails.application.routes.draw do
     get 'liveness' => 'health#liveness'
     get 'readiness' => 'health#readiness'
     resources :metrics, only: [:index]
-    mount Peek::Railtie => '/peek', as: 'peek_routes'
+    mount Peek::Railtie => '/peek', as: 'peek_routes' if defined?(Peek::Railtie)
 
     # Boards resources shared between group and projects
     resources :boards, only: [] do
