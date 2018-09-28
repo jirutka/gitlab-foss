@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 2020_02_04_113223) do
     t.integer "default_branch_protection", default: 2
     t.text "help_text"
     t.text "restricted_visibility_levels"
-    t.boolean "version_check_enabled", default: true
+    t.boolean "version_check_enabled", default: false
     t.integer "max_attachment_size", default: 10, null: false
     t.integer "default_project_visibility", default: 0, null: false
     t.integer "default_snippet_visibility", default: 0, null: false
