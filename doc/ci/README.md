@@ -94,10 +94,6 @@ Leverage the power of Docker to run your CI pipelines.
 - Article (2016-11-22): [Introducing Review Apps](https://about.gitlab.com/2016/11/22/introducing-review-apps/)
 - [Example project that shows how to use Review Apps](https://gitlab.com/gitlab-examples/review-apps-nginx/)
 
-## Auto DevOps
-
-- [Auto DevOps](../topics/autodevops/index.md): Auto DevOps automatically detects, builds, tests, deploys, and monitors your applications.
-
 ## GitLab CI for GitLab Pages
 
 See the documentation on [GitLab Pages](../user/project/pages/index.md).
