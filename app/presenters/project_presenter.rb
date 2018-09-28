@@ -273,6 +273,7 @@ class ProjectPresenter < Gitlab::View::Presenter::Delegated
   end
 
   def autodevops_anchor_data(show_auto_devops_callout: false)
+    return  # patched
     if current_user && can?(current_user, :admin_pipeline, project) && repository.gitlab_ci_yml.blank? && !show_auto_devops_callout
       AnchorData.new(auto_devops_enabled?,
                      auto_devops_enabled? ? _('Auto DevOps enabled') : _('Enable Auto DevOps'),
