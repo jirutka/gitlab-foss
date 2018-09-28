@@ -11083,7 +11083,7 @@ CREATE TABLE application_settings (
     elasticsearch_search boolean DEFAULT false NOT NULL,
     repository_storages character varying DEFAULT 'default'::character varying,
     enabled_git_access_protocol character varying,
-    usage_ping_enabled boolean DEFAULT true NOT NULL,
+    usage_ping_enabled boolean DEFAULT false NOT NULL,
     sign_in_text_html text,
     help_page_text_html text,
     shared_runners_text_html text,
