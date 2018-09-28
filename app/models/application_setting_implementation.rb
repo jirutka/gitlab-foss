@@ -91,7 +91,7 @@ module ApplicationSettingImplementation
         group_download_export_limit: 1,
         group_export_limit: 6,
         group_import_limit: 6,
-        help_page_hide_commercial_content: false,
+        help_page_hide_commercial_content: true,
         help_page_text: nil,
         help_page_documentation_base_url: nil,
         hide_third_party_offers: true,
