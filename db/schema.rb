@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 20181014121030) do
     t.integer "cached_markdown_version"
     t.boolean "clientside_sentry_enabled", default: false, null: false
     t.string "clientside_sentry_dsn"
-    t.boolean "prometheus_metrics_enabled", default: true, null: false
+    t.boolean "prometheus_metrics_enabled", default: false, null: false
     t.boolean "help_page_hide_commercial_content", default: true
     t.string "help_page_support_url"
     t.integer "performance_bar_allowed_group_id"
