@@ -11044,7 +11044,7 @@ CREATE TABLE application_settings (
     default_branch_protection integer DEFAULT 2,
     help_text text,
     restricted_visibility_levels text,
-    version_check_enabled boolean DEFAULT true,
+    version_check_enabled boolean DEFAULT false,
     max_attachment_size integer DEFAULT 10 NOT NULL,
     default_project_visibility integer DEFAULT 0 NOT NULL,
     default_snippet_visibility integer DEFAULT 0 NOT NULL,
