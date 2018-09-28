@@ -4,11 +4,13 @@ module UserCalloutsHelper
   CLUSTER_SECURITY_WARNING = 'cluster_security_warning'.freeze
 
   def show_gke_cluster_integration_callout?(project)
+    return false  # patched
     can?(current_user, :create_cluster, project) &&
       !user_dismissed?(GKE_CLUSTER_INTEGRATION)
   end
 
   def show_gcp_signup_offer?
+    return false  # patched
     !user_dismissed?(GCP_SIGNUP_OFFER)
   end
 
