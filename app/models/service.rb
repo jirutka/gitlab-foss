@@ -261,7 +261,6 @@ class Service < ActiveRecord::Base
       hipchat
       irker
       jira
-      kubernetes
       mattermost_slash_commands
       mattermost
       packagist

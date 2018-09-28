@@ -205,7 +205,7 @@ constraints(::Constraints::ProjectUrlConstrainer.new) do
         end
       end
 
-      resources :clusters, except: [:edit, :create] do
+      resources :clusters, except: [:edit, :create], constraints: proc { false } do  # patched
         collection do
           post :create_gcp
           post :create_user
