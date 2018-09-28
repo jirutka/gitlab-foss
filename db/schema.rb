@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20181014121030) do
     t.string "enabled_git_access_protocol"
     t.boolean "domain_blacklist_enabled", default: false
     t.text "domain_blacklist"
-    t.boolean "usage_ping_enabled", default: true, null: false
+    t.boolean "usage_ping_enabled", default: false, null: false
     t.boolean "koding_enabled"
     t.string "koding_url"
     t.text "sign_in_text_html"
