@@ -20,8 +20,8 @@ To understand what features you have access to, check the [GitLab subscriptions]
 | [Administrator documentation](administration/index.md) | [GitLab CI/CD examples](ci/examples/README.md) |
 | [Contributor documentation](#contributor-documentation) | [Configuring `.gitlab-ci.yml`](ci/yaml/README.md) |
 | [Getting started with GitLab](#getting-started-with-gitlab) | [Using Docker images](ci/docker/using_docker_images.md) |
-| [API](api/README.md) | [Kubernetes integration](user/project/clusters/index.md)|
-| [SSH authentication](ssh/README.md) | [GitLab Container Registry](user/project/container_registry.md) |
+| [API](api/README.md) | [GitLab Container Registry](user/project/container_registry.md) |
+| [SSH authentication](ssh/README.md) | |
 | [GitLab Pages](user/project/pages/index.md) | |
 
 ## Complete DevOps with GitLab
@@ -160,9 +160,7 @@ Automate your entire workflow from build to deploy and monitoring with GitLab
 Auto Devops. Best practice templates get you started with minimal to zero
 configuration. Then customize everything from buildpacks to CI/CD.
 
-- [Deployment of Helm, Ingress, and Prometheus on Kubernetes](user/project/clusters/index.md#installing-applications)
 - [Protected variables](ci/variables/README.md#protected-variables)
-- [Easy creation of Kubernetes clusters on GKE](user/project/clusters/index.md#adding-and-creating-a-new-gke-cluster-via-gitlab)
 
 ### Monitor
 

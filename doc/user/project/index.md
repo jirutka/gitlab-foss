@@ -52,8 +52,6 @@ common actions on issues or merge requests
 - [GitLab CI/CD](../../ci/README.md): GitLab's built-in [Continuous Integration, Delivery, and Deployment](https://about.gitlab.com/2016/08/05/continuous-integration-delivery-and-deployment-with-gitlab/) tool
   - [Container Registry](container_registry.md): Build and push Docker
   images out-of-the-box
-  - [Auto Deploy](../../ci/autodeploy/index.md): Configure GitLab CI/CD
-  to automatically set up your app's deployment
   - [Enable and disable GitLab CI](../../ci/enable_or_disable_ci.md)
   - [Pipelines](../../ci/pipelines.md#pipelines): Configure and visualize
   your GitLab CI/CD pipelines from the UI
@@ -65,8 +63,6 @@ common actions on issues or merge requests
      browse, and download job artifacts
      - [Pipeline settings](pipelines/settings.md): Set up Git strategy (choose the default way your repository is fetched from GitLab in a job),
      timeout (defines the maximum amount of time in minutes that a job is able run), custom path for `.gitlab-ci.yml`, test coverage parsing, pipeline's visibility, and much more
-  - [GKE cluster integration](clusters/index.md): Connecting your GitLab project
-    with Google Kubernetes Engine
 - [GitLab Pages](pages/index.md): Build, test, and deploy your static
 website with GitLab Pages
 
