@@ -11161,7 +11161,7 @@ CREATE TABLE application_settings (
     enforce_terms boolean DEFAULT false,
     file_template_project_id integer,
     pseudonymizer_enabled boolean DEFAULT false NOT NULL,
-    hide_third_party_offers boolean DEFAULT false NOT NULL,
+    hide_third_party_offers boolean DEFAULT true NOT NULL,
     snowplow_enabled boolean DEFAULT false NOT NULL,
     snowplow_collector_hostname character varying,
     snowplow_cookie_domain character varying,
