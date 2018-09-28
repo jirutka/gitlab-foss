@@ -16,7 +16,7 @@
   .settings-content
     = render 'form'
 
-%section.settings#autodevops-settings.no-animate{ class: ('expanded' if expanded), data: { qa_selector: 'autodevops_settings_content' } }
+- if false  #%section.settings#autodevops-settings.no-animate{ class: ('expanded' if expanded), data: { qa_selector: 'autodevops_settings_content' } }
   .settings-header
     %h4
       = s_('CICD|Auto DevOps')
