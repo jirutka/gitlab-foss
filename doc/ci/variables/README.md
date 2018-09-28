@@ -232,9 +232,6 @@ are set in the build environment. These variables are only defined for
 [deployment jobs](../environments.md). Please consult the documentation of
 the project services that you are using to learn which variables they define.
 
-An example project service that defines deployment variables is the
-[Kubernetes integration](../../user/project/clusters/index.md#deployment-variables).
-
 ## Debug tracing
 
 > Introduced in GitLab Runner 1.7.
