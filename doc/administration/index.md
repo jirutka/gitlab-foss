@@ -123,7 +123,6 @@ created in snippets, wikis, and repos.
 - [Artifacts size and expiration](../user/admin_area/settings/continuous_integration.md#maximum-artifacts-size): Define maximum artifacts limits and expiration date.
 - [Register Shared and specific Runners](../ci/runners/README.md#registering-a-shared-runner): Learn how to register and configure Shared and specific Runners to your own instance.
 - [Shared Runners pipelines quota](../user/admin_area/settings/continuous_integration.md#shared-runners-pipeline-minutes-quota): Limit the usage of pipeline minutes for Shared Runners.
-- [Enable/disable Auto DevOps](../topics/autodevops/index.md#enabling-auto-devops): Enable or disable Auto DevOps for your instance.
 
 ## Git configuration options
 
