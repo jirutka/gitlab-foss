@@ -2,7 +2,7 @@
   = form_errors(@application_setting)
 
   %fieldset
-    .form-group
+    - if false #.form-group  # patched
       .card.auto-devops-card
         .card-body
           .form-check
@@ -12,7 +12,7 @@
             .form-text.text-muted
               = s_('CICD|The Auto DevOps pipeline will run if no alternative CI configuration file is found.')
               = link_to _('More information'), help_page_path('topics/autodevops/index.md'), target: '_blank'
-    .form-group
+    - if false #.form-group  # patched
       = f.label :auto_devops_domain, s_('AdminSettings|Auto DevOps domain'), class: 'label-bold'
       = f.text_field :auto_devops_domain, class: 'form-control', placeholder: 'domain.com'
       .form-text.text-muted
