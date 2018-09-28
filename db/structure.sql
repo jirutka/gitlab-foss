@@ -257,7 +257,7 @@ CREATE TABLE public.application_settings (
     mirror_max_delay integer DEFAULT 300 NOT NULL,
     mirror_max_capacity integer DEFAULT 100 NOT NULL,
     mirror_capacity_threshold integer DEFAULT 50 NOT NULL,
-    prometheus_metrics_enabled boolean DEFAULT true NOT NULL,
+    prometheus_metrics_enabled boolean DEFAULT false NOT NULL,
     authorized_keys_enabled boolean DEFAULT true NOT NULL,
     help_page_hide_commercial_content boolean DEFAULT true,
     help_page_support_url character varying,
