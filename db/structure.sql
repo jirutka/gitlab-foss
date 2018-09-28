@@ -220,7 +220,7 @@ CREATE TABLE public.application_settings (
     enabled_git_access_protocol character varying,
     domain_blacklist_enabled boolean DEFAULT false,
     domain_blacklist text,
-    usage_ping_enabled boolean DEFAULT true NOT NULL,
+    usage_ping_enabled boolean DEFAULT false NOT NULL,
     sign_in_text_html text,
     help_page_text_html text,
     shared_runners_text_html text,
