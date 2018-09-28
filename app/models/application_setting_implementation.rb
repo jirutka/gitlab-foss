@@ -69,7 +69,7 @@ module ApplicationSettingImplementation
         gravatar_enabled: Settings.gravatar['enabled'],
         help_page_hide_commercial_content: false,
         help_page_text: nil,
-        hide_third_party_offers: false,
+        hide_third_party_offers: true,
         housekeeping_bitmaps_enabled: true,
         housekeeping_enabled: true,
         housekeeping_full_repack_period: 50,

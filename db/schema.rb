@@ -279,7 +279,7 @@ ActiveRecord::Schema.define(version: 2020_02_04_113223) do
     t.boolean "enforce_terms", default: false
     t.integer "file_template_project_id"
     t.boolean "pseudonymizer_enabled", default: false, null: false
-    t.boolean "hide_third_party_offers", default: false, null: false
+    t.boolean "hide_third_party_offers", default: true, null: false
     t.boolean "snowplow_enabled", default: false, null: false
     t.string "snowplow_collector_hostname"
     t.string "snowplow_cookie_domain"
