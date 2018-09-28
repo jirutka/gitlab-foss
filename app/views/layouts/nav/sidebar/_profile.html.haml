@@ -41,7 +41,7 @@
             = link_to applications_profile_path do
               %strong.fly-out-top-item-name
                 = _('Applications')
-      = nav_link(controller: :chat_names) do
+      - if false #= nav_link(controller: :chat_names) do  # patched
         = link_to profile_chat_names_path do
           .nav-icon-container
             = sprite_icon('comment')
