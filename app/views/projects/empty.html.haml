@@ -21,8 +21,8 @@
           - link_to_protected_branches = link_to _('Learn more about protected branches'), help_page_path('user/project/protected_branches')
           = _('Note that the master branch is automatically protected. %{link_to_protected_branches}').html_safe % { link_to_protected_branches: link_to_protected_branches }
 
-      %hr
-      %p
+      //%hr  # patched
+      - if false #%p  # patched
         - link_to_auto_devops_settings = link_to(s_('AutoDevOps|enable Auto DevOps'), project_settings_ci_cd_path(@project, anchor: 'autodevops-settings'))
         - link_to_add_kubernetes_cluster = link_to(s_('AutoDevOps|add a Kubernetes cluster'), new_project_cluster_path(@project))
         = s_('AutoDevOps|You can automatically build and test your application if you %{link_to_auto_devops_settings} for this project. You can automatically deploy it as well, if you %{link_to_add_kubernetes_cluster}.').html_safe % { link_to_auto_devops_settings: link_to_auto_devops_settings, link_to_add_kubernetes_cluster: link_to_add_kubernetes_cluster }
