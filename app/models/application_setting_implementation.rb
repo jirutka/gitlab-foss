@@ -70,7 +70,7 @@ module ApplicationSettingImplementation
         gitaly_timeout_fast: 10,
         gitaly_timeout_medium: 30,
         gravatar_enabled: Settings.gravatar['enabled'],
-        help_page_hide_commercial_content: false,
+        help_page_hide_commercial_content: true,
         help_page_text: nil,
         hide_third_party_offers: true,
         housekeeping_bitmaps_enabled: true,
