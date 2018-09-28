@@ -9170,7 +9170,7 @@ CREATE TABLE application_settings (
     performance_bar_allowed_group_id integer,
     hashed_storage_enabled boolean DEFAULT true NOT NULL,
     project_export_enabled boolean DEFAULT true NOT NULL,
-    auto_devops_enabled boolean DEFAULT true NOT NULL,
+    auto_devops_enabled boolean DEFAULT false NOT NULL,
     throttle_unauthenticated_enabled boolean DEFAULT false NOT NULL,
     throttle_unauthenticated_requests_per_period integer DEFAULT 3600 NOT NULL,
     throttle_unauthenticated_period_in_seconds integer DEFAULT 3600 NOT NULL,
