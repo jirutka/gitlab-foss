@@ -286,6 +286,7 @@ class ProjectPresenter < Gitlab::View::Presenter::Delegated
   end
 
   def kubernetes_cluster_anchor_data
+    return  # patched
     if current_user && can?(current_user, :create_cluster, project)
       cluster_link = clusters.count == 1 ? project_cluster_path(project, clusters.first) : project_clusters_path(project)
 
