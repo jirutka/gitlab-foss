@@ -11028,7 +11028,7 @@ CREATE TABLE application_settings (
     mirror_capacity_threshold integer DEFAULT 50 NOT NULL,
     prometheus_metrics_enabled boolean DEFAULT true NOT NULL,
     authorized_keys_enabled boolean DEFAULT true NOT NULL,
-    help_page_hide_commercial_content boolean DEFAULT false,
+    help_page_hide_commercial_content boolean DEFAULT true,
     help_page_support_url character varying,
     slack_app_enabled boolean DEFAULT false,
     slack_app_id character varying,
