@@ -94,7 +94,7 @@ module ApplicationSettingImplementation
         help_page_hide_commercial_content: false,
         help_page_text: nil,
         help_page_documentation_base_url: nil,
-        hide_third_party_offers: false,
+        hide_third_party_offers: true,
         housekeeping_enabled: true,
         housekeeping_full_repack_period: 50,
         housekeeping_gc_period: 200,
