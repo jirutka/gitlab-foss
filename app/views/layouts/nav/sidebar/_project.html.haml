@@ -220,7 +220,7 @@
                   %span
                     = _('Environments')
 
-            - if project_nav_tab? :clusters
+            - if false  #project_nav_tab? :clusters  # patched
               - show_cluster_hint = show_gke_cluster_integration_callout?(@project)
               = nav_link(controller: [:clusters, :user, :gcp]) do
                 = link_to project_clusters_path(@project), title: _('Kubernetes'), class: 'shortcuts-kubernetes' do

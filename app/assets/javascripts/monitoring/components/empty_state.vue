@@ -44,10 +44,8 @@ export default {
           title: 'Get started with performance monitoring',
           description: `Stay updated about the performance and health
               of your environment by configuring Prometheus to monitor your deployments.`,
-          buttonText: 'Install Prometheus on clusters',
-          buttonPath: this.clustersPath,
-          secondaryButtonText: 'Configure existing Prometheus',
-          secondaryButtonPath: this.settingsPath,
+          buttonText: 'Configure existing Prometheus',
+          buttonPath: this.settingsPath,
         },
         loading: {
           svgUrl: this.emptyLoadingSvgPath,
