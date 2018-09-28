@@ -168,7 +168,7 @@ ActiveRecord::Schema.define(version: 20180906101639) do
     t.boolean "allow_local_requests_from_hooks_and_services", default: false, null: false
     t.boolean "enforce_terms", default: false
     t.boolean "mirror_available", default: true, null: false
-    t.boolean "hide_third_party_offers", default: false, null: false
+    t.boolean "hide_third_party_offers", default: true, null: false
     t.boolean "instance_statistics_visibility_private", default: false, null: false
     t.boolean "web_ide_clientside_preview_enabled", default: false, null: false
     t.boolean "user_show_add_ssh_key_message", default: true, null: false
