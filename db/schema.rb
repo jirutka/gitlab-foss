@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 20190204115450) do
     t.integer "performance_bar_allowed_group_id"
     t.boolean "hashed_storage_enabled", default: false, null: false
     t.boolean "project_export_enabled", default: true, null: false
-    t.boolean "auto_devops_enabled", default: true, null: false
+    t.boolean "auto_devops_enabled", default: false, null: false
     t.boolean "throttle_unauthenticated_enabled", default: false, null: false
     t.integer "throttle_unauthenticated_requests_per_period", default: 3600, null: false
     t.integer "throttle_unauthenticated_period_in_seconds", default: 3600, null: false
