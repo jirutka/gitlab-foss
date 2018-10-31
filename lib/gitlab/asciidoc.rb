@@ -6,6 +6,7 @@ require 'asciidoctor/extensions'
 require 'asciidoctor/interdoc_reftext/processor'
 require 'gitlab/asciidoc/html5_converter'
 require 'gitlab/asciidoc/interdoc_reftext_resolver'
+require 'gitlab/asciidoc/mermaid_block_processor'
 require 'gitlab/asciidoc/repository_tree'
 require 'gitlab/asciidoc/syntax_highlighter/html_pipeline_adapter'
 
@@ -28,6 +29,10 @@ module Gitlab
         'max-include-depth' => MAX_INCLUDE_DEPTH,
         'sectanchors' => true
     }.freeze
+
+    Asciidoctor::Extensions.register do
+      block MermaidBlockProcessor
+    end
 
     # Public: Converts the provided Asciidoc markup into HTML.
     #
