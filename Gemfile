@@ -497,3 +497,5 @@ gem 'mail', '= 2.7.1'
 
 # File encryption
 gem 'lockbox', '~> 0.3.3'
+
+gem 'ipaddress', '~> 0.8'
