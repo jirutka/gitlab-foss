@@ -491,3 +491,5 @@ gem 'liquid', '~> 4.0'
 
 # LRU cache
 gem 'lru_redux'
+
+gem 'ipaddress', '~> 0.8'
