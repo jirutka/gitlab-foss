@@ -452,3 +452,5 @@ gem 'grape_logging', '~> 1.7'
 
 # Asset synchronization
 gem 'asset_sync', '~> 2.4', group: :exclude
+
+gem 'ipaddress', '~> 0.8'
