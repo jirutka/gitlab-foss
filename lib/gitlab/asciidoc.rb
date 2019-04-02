@@ -46,14 +46,18 @@ module Gitlab
       attributes = if (project = context[:project])
         {
           'gl-commit-ref' => context[:ref] || context[:project].default_branch,
+          'gl-pages-url' => project.pages_url,
           'gl-project-namespace' => project.namespace.full_path,
           'gl-project-path' => project.full_path,
           'gl-project-title' => project.title,
           'gl-project-url' => project.web_url,
+          'gl-registry-url' => Gitlab.config.registry.host_port,
+          'gl-registry-image-url' => project.container_registry_url,
           'gl-repo-http-url' => project.http_url_to_repo,
           'gl-repo-ssh-url' => project.ssh_url_to_repo,
           'gl-server-host' => Gitlab.config.gitlab.host,
           'gl-server-url' => Gitlab.config.gitlab.base_url,
+          'gl-user-login' => context[:current_user]&.username,
         }.map { |k, v| "#{k}=#{v}" }
       else
         []
