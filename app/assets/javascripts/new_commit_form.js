@@ -7,8 +7,14 @@ export default class NewCommitForm {
     this.originalBranch = form.find('.js-original-branch');
     this.createMergeRequest = form.find('.js-create-merge-request');
     this.createMergeRequestContainer = form.find('.js-create-merge-request-container');
+    this.filenameInput = form.find('.js-file-path-name-input');
+    this.commitMessage = form.find('.js-commit-message');
+    this.dirname = form.data('xBlobDirname');
+    this.commitMessageEdited = false;
     this.branchName.keyup(this.renderDestination);
     this.renderDestination();
+    this.listenForFilenameInput();
+    this.listenForCommitMessageInput();
   }
   renderDestination() {
     const different = this.branchName.val() !== this.originalBranch.val();
@@ -22,5 +28,28 @@ export default class NewCommitForm {
       this.createMergeRequest.prop('checked', false);
     }
     return (this.wasDifferent = different);
+  }
+
+  listenForFilenameInput() {
+    this.filenameInput.on('keyup blur', () => {
+      if (!this.commitMessageEdited) {
+        this.updateCommitMessage();
+      }
+    });
+  }
+
+  listenForCommitMessageInput() {
+    this.commitMessage.on('change', () => {
+      this.commitMessageEdited = true;
+    });
+  }
+
+  updateCommitMessage() {
+    const msgPrefix = this.commitMessage.text().split(' ')[0];
+
+    if (msgPrefix === 'Add' || msgPrefix === 'Update') {
+      const filename = (this.dirname ? this.dirname + '/' : '') + this.filenameInput.val();
+      this.commitMessage.text(msgPrefix + ' ' + filename);
+    }
   }
 }
