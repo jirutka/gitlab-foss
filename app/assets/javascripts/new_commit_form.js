@@ -7,8 +7,13 @@ export default class NewCommitForm {
     this.originalBranch = form.find('.js-original-branch');
     this.createMergeRequest = form.find('.js-create-merge-request');
     this.createMergeRequestContainer = form.find('.js-create-merge-request-container');
+    this.filenameInput = form.find('.js-file-path-name-input');
+    this.commitMessage = form.find('js-commit-message');
+    this.commitMessageEdited = false;
     this.branchName.keyup(this.renderDestination);
     this.renderDestination();
+    this.listenForFilenameInput();
+    this.listenForCommitMessageInput();
   }
   renderDestination() {
     var different;
@@ -23,5 +28,27 @@ export default class NewCommitForm {
       this.createMergeRequest.prop('checked', false);
     }
     return (this.wasDifferent = different);
+  }
+
+  listenForFilenameInput() {
+    this.filenameInput.on('keyup blur', () => {
+      if (!this.commitMessageEdited) {
+        this.updateCommitMessage();
+      }
+    });
+  }
+
+  listenForCommitMessageInput() {
+    this.commitMessage.on('keyup blur', () => {
+      this.commitMessageEdited = true;
+    });
+  }
+
+  updateCommitMessage() {
+    const msgPrefix = this.commitMessage.text().split(' ')[0];
+
+    if (msgPrefix === 'Add' || msgPrefix === 'Update') {
+      this.commitMessage.text(`${msgPrefix} ${this.filenameInput}`);
+    }
   }
 }
