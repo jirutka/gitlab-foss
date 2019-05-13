@@ -152,7 +152,8 @@ module Gitlab
       end
 
       def api_request?
-        current_request.path.starts_with?("/api/")
+        current_request.path.starts_with?("/api/") \
+          || %r{/badges/[^/]+/(?:pipeline|coverage)\.svg$}.match?(current_request.path)
       end
     end
   end
