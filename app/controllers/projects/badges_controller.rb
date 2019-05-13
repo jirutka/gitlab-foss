@@ -2,6 +2,7 @@
 
 class Projects::BadgesController < Projects::ApplicationController
   layout 'project_settings'
+  prepend_before_action(only: [:pipeline, :coverage]) { authenticate_sessionless_user!(:api) }
   before_action :authorize_admin_project!, only: [:index]
   before_action :no_cache_headers, only: [:pipeline, :coverage]
   before_action :authorize_read_build!, only: [:pipeline, :coverage]
