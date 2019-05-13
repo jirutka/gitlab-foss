@@ -332,7 +332,8 @@ module Gitlab
       end
 
       def api_request?
-        current_request.path.starts_with?(Gitlab::Utils.append_path(Gitlab.config.gitlab.relative_url_root, '/api/'))
+        current_request.path.starts_with?(Gitlab::Utils.append_path(Gitlab.config.gitlab.relative_url_root, '/api/')) \
+          || %r{/badges/[^/]+/(?:pipeline|coverage)\.svg$}.match?(current_request.path)  # XXX-Patched: added line
       end
 
       def git_request?
