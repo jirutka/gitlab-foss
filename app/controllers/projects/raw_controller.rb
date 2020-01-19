@@ -8,6 +8,7 @@ class Projects::RawController < Projects::ApplicationController
 
   prepend_before_action(only: [:show]) { authenticate_sessionless_user!(:blob) }
 
+  prepend_before_action { authenticate_sessionless_user!(:api) }
   before_action :require_non_empty_project
   before_action :authorize_download_code!
   before_action :show_rate_limit, only: [:show], unless: :external_storage_request?
