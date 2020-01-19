@@ -153,7 +153,14 @@ module Gitlab
 
       def api_request?
         current_request.path.starts_with?("/api/") \
-          || %r{/badges/[^/]+/(?:pipeline|coverage)\.svg$}.match?(current_request.path)
+          || %r{/badges/[^/]+/(?:pipeline|coverage)\.svg$}.match?(current_request.path) \
+          || route_hash[:controller] == 'projects/raw'
+      end
+
+      def route_hash
+        Rails.application.routes.recognize_path(current_request.url, {
+          method: current_request.request_method,
+        }) rescue {}
       end
     end
   end

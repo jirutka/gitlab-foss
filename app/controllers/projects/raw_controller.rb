@@ -5,6 +5,7 @@ class Projects::RawController < Projects::ApplicationController
   include ExtractsPath
   include SendsBlob
 
+  prepend_before_action { authenticate_sessionless_user!(:api) }
   before_action :require_non_empty_project
   before_action :assign_ref_vars
   before_action :authorize_download_code!
