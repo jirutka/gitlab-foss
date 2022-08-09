@@ -29,23 +29,23 @@ gem 'devise', '~> 4.6'
 gem 'doorkeeper', '~> 5.0.2'
 gem 'doorkeeper-openid_connect', '~> 1.6.3'
 gem 'omniauth', '~> 1.8'
-gem 'omniauth-auth0', '~> 2.0.0'
-gem 'omniauth-azure-oauth2', '~> 0.0.9'
-gem 'omniauth-cas3', '~> 1.1.4'
-gem 'omniauth-facebook', '~> 4.0.0'
+gem 'omniauth-auth0', '~> 2.0.0', group: :exclude
+gem 'omniauth-azure-oauth2', '~> 0.0.9', group: :exclude
+gem 'omniauth-cas3', '~> 1.1.4', group: :exclude
+gem 'omniauth-facebook', '~> 4.0.0', group: :exclude
 gem 'omniauth-github', '~> 1.4'
 gem 'omniauth-gitlab', '~> 1.0.2'
-gem 'omniauth-google-oauth2', '~> 0.6.0'
+gem 'omniauth-google-oauth2', '~> 0.6.0', group: :exclude
 gem 'omniauth-kerberos', '~> 0.3.0', group: :kerberos
 gem 'omniauth-oauth2-generic', '~> 0.2.2'
-gem 'omniauth-saml', '~> 1.10'
-gem 'omniauth-shibboleth', '~> 1.3.0'
-gem 'omniauth-twitter', '~> 1.4'
-gem 'omniauth_crowd', '~> 2.2.0'
-gem 'omniauth-authentiq', '~> 0.3.3'
+gem 'omniauth-saml', '~> 1.10', group: :exclude
+gem 'omniauth-shibboleth', '~> 1.3.0', group: :exclude
+gem 'omniauth-twitter', '~> 1.4', group: :exclude
+gem 'omniauth_crowd', '~> 2.2.0', group: :exclude
+gem 'omniauth-authentiq', '~> 0.3.3', group: :exclude
 gem 'omniauth_openid_connect', '~> 0.3.3'
-gem "omniauth-ultraauth", '~> 0.0.2'
-gem 'omniauth-salesforce', '~> 1.0.5'
+gem "omniauth-ultraauth", '~> 0.0.2', group: :exclude
+gem 'omniauth-salesforce', '~> 1.0.5', group: :exclude
 gem 'rack-oauth2', '~> 1.9.3'
 gem 'jwt', '~> 2.1.0'
 
@@ -112,12 +112,12 @@ gem 'mini_magick'
 gem 'fog-aws', '~> 3.5'
 # Locked until fog-google resolves https://github.com/fog/fog-google/issues/421.
 # Also see config/initializers/fog_core_patch.rb.
-gem 'fog-core', '= 2.1.0'
-gem 'fog-google', '~> 1.9'
+gem 'fog-core', '= 2.1.0', group: :exclude
+gem 'fog-google', '~> 1.9', group: :exclude
 gem 'fog-local', '~> 0.6'
-gem 'fog-openstack', '~> 1.0'
-gem 'fog-rackspace', '~> 0.1.1'
-gem 'fog-aliyun', '~> 0.3'
+gem 'fog-openstack', '~> 1.0', group: :exclude
+gem 'fog-rackspace', '~> 0.1.1', group: :exclude
+gem 'fog-aliyun', '~> 0.3', group: :exclude
 
 # for Google storage
 gem 'google-api-client', '~> 0.23'
@@ -128,10 +128,12 @@ gem 'unf', '~> 0.1.4'
 # Seed data
 gem 'seed-fu', '~> 2.3.7'
 
-# Search
+# Search (Elastic is on EE only)
+group :exclude do
 gem 'elasticsearch-model', '~> 6.1'
 gem 'elasticsearch-rails', '~> 6.1', require: 'elasticsearch/rails/instrumentation'
 gem 'elasticsearch-api',   '~> 6.8'
+end
 gem 'aws-sdk'
 gem 'faraday_middleware-aws-signers-v4'
 
@@ -319,7 +321,7 @@ gem 'peek', '~> 1.1'
 gem 'snowplow-tracker', '~> 0.6.1'
 
 # Memory benchmarks
-gem 'derailed_benchmarks', require: false
+gem 'derailed_benchmarks', require: false, group: :exclude
 
 # Metrics
 group :metrics do
@@ -428,8 +430,8 @@ gem 'ruby-prof', '~> 1.3.0'
 gem 'stackprof', '~> 0.2.15', require: false
 gem 'rbtrace', '~> 0.4', require: false
 gem 'memory_profiler', '~> 0.9', require: false
-gem 'benchmark-memory', '~> 0.1', require: false
-gem 'activerecord-explain-analyze', '~> 0.1', require: false
+gem 'benchmark-memory', '~> 0.1', require: false, group: :exclude
+gem 'activerecord-explain-analyze', '~> 0.1', require: false, group: :exclude
 
 # OAuth
 gem 'oauth2', '~> 1.4'
