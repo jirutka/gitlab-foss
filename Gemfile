@@ -262,7 +262,7 @@ gem 'loofah', '~> 2.2'
 gem 'licensee', '~> 8.9'
 
 # Ace editor
-gem 'ace-rails-ap', '~> 4.1.0'
+gem 'ace-rails-ap', '~> 4.1.0', group: :assets
 
 # Detect and convert string character encoding
 gem 'charlock_holmes', '~> 0.7.5'
@@ -280,8 +280,8 @@ gem 'gitlab_chronic_duration', '~> 0.10.6.2'
 gem 'webpack-rails', '~> 0.9.10'
 gem 'rack-proxy', '~> 0.6.0'
 
-gem 'sassc-rails', '~> 2.1.0'
-gem 'uglifier', '~> 2.7.2'
+gem 'sassc-rails', '~> 2.1.0', group: :assets
+gem 'uglifier', '~> 2.7.2', group: :assets
 
 gem 'addressable', '~> 2.7'
 gem 'font-awesome-rails', '~> 4.7'
@@ -304,10 +304,10 @@ gem 'premailer-rails', '~> 1.10.3'
 gem 'gitlab-labkit', '0.12.0'
 
 # I18n
-gem 'ruby_parser', '~> 3.8', require: false
+gem 'ruby_parser', '~> 3.8', require: false, group: :assets
 gem 'rails-i18n', '~> 6.0'
 gem 'gettext_i18n_rails', '~> 1.8.0'
-gem 'gettext_i18n_rails_js', '~> 1.3'
+gem 'gettext_i18n_rails_js', '~> 1.3', group: :assets
 gem 'gettext', '~> 3.2.2', require: false, group: :development
 
 gem 'batch-loader', '~> 1.4.0'
