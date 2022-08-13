@@ -1782,6 +1782,3 @@ DEPENDENCIES
   webrick (~> 1.6.1)
   wikicloth (= 0.8.1)
   yajl-ruby (~> 1.4.1)
-
-BUNDLED WITH
-   2.3.15
