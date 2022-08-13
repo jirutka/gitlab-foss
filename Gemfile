@@ -289,9 +289,11 @@ gem 'gitlab_chronic_duration', '~> 0.10.6.2'
 
 gem 'rack-proxy', '~> 0.7.2'
 
+group :assets do
 gem 'sassc-rails', '~> 2.1.0'
 gem 'autoprefixer-rails', '10.2.5.1'
 gem 'terser', '1.0.2'
+end
 
 gem 'addressable', '~> 2.8'
 gem 'tanuki_emoji', '~> 0.6'
@@ -323,10 +325,14 @@ gem 'gitlab-labkit', '~> 0.23.0'
 gem 'thrift', '>= 0.14.0'
 
 # I18n
+group :assets do
 gem 'ruby_parser', '~> 3.15', require: false
+end
 gem 'rails-i18n', '~> 7.0'
 gem 'gettext_i18n_rails', '~> 1.8.0'
+group :assets do
 gem 'gettext_i18n_rails_js', '~> 1.3'
+end
 gem 'gettext', '~> 3.3', require: false, group: :development
 
 gem 'batch-loader', '~> 2.0.1'
