@@ -452,14 +452,7 @@ module Gitlab
       end
 
       def operating_system
-        ohai_data = Ohai::System.new.tap do |oh|
-          oh.all_plugins(['platform'])
-        end.data
-
-        platform = ohai_data['platform']
-        platform = 'raspbian' if ohai_data['platform'] == 'debian' && /armv/.match?(ohai_data['kernel']['machine'])
-
-        "#{platform}-#{ohai_data['platform_version']}"
+        'Alpine Linux'
       end
 
       # Source: https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/data/ping_metrics_to_stage_mapping_data.csv
