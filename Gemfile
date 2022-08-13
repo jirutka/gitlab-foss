@@ -37,6 +37,7 @@ gem 'doorkeeper-openid_connect', '~> 1.7.5'
 gem 'rexml', '~> 3.2.5'
 gem 'ruby-saml', '~> 1.13.0'
 gem 'omniauth', '~> 1.8'
+group :exclude do
 gem 'omniauth-auth0', '~> 2.0.0'
 gem 'omniauth-azure-activedirectory-v2', '~> 1.0'
 gem 'omniauth-azure-oauth2', '~> 0.0.9' # See vendor/gems/omniauth-azure-oauth2/README.md
@@ -44,18 +45,23 @@ gem 'omniauth-cas3', '~> 1.1.4', path: 'vendor/gems/omniauth-cas3' # See vendor/
 gem 'omniauth-dingtalk-oauth2', '~> 1.0'
 gem 'omniauth-alicloud', '~> 1.0.1'
 gem 'omniauth-facebook', '~> 4.0.0'
+end
 gem 'omniauth-github', '~> 1.4'
 gem 'omniauth-gitlab', '~> 4.0.0', path: 'vendor/gems/omniauth-gitlab' # See vendor/gems/omniauth-gitlab/README.md
 gem 'omniauth-google-oauth2', '~> 0.6.0'
 gem 'omniauth-oauth2-generic', '~> 0.2.2'
+group :exclude do
 gem 'omniauth-saml', '~> 1.10'
 gem 'omniauth-shibboleth', '~> 1.3.0'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'omniauth_crowd', '~> 2.4.0', path: 'vendor/gems/omniauth_crowd' # See vendor/gems/omniauth_crowd/README.md
 gem 'omniauth-authentiq', '~> 0.3.3'
+end
 gem 'gitlab-omniauth-openid-connect', '~> 0.9.0', require: 'omniauth_openid_connect'
+group :exclude do
 gem 'omniauth-salesforce', '~> 1.0.5'
 gem 'omniauth-atlassian-oauth2', '~> 0.2.0'
+end
 gem 'rack-oauth2', '~> 1.21.2'
 gem 'jwt', '~> 2.1.0'
 
@@ -122,16 +128,22 @@ gem 'carrierwave', '~> 1.3'
 gem 'mini_magick', '~> 4.10.1'
 
 # for backups
+group :exclude do
 gem 'fog-aws', '~> 3.14'
+end
 # Locked until fog-google resolves https://github.com/fog/fog-google/issues/421.
 # Also see config/initializers/fog_core_patch.rb.
 gem 'fog-core', '= 2.1.0'
+group :exclude do
 gem 'fog-google', '~> 1.15', require: 'fog/google'
+end
 gem 'fog-local', '~> 0.6'
+group :exclude do
 gem 'fog-openstack', '~> 1.0'
 gem 'fog-rackspace', '~> 0.1.1'
 gem 'fog-aliyun', '~> 0.3'
 gem 'gitlab-fog-azure-rm', '~> 1.3.0', require: 'fog/azurerm'
+end
 
 # for Google storage
 gem 'google-api-client', '~> 0.33'
@@ -142,15 +154,19 @@ gem 'unf', '~> 0.1.4'
 # Seed data
 gem 'seed-fu', '~> 2.3.7'
 
-# Search
+# Search (EE only)
+group :exclude do
 gem 'elasticsearch-model', '~> 7.2'
 gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation'
 gem 'elasticsearch-api',   '7.13.3'
+end
 gem 'aws-sdk-core', '~> 3.131.0'
 gem 'aws-sdk-cloudformation', '~> 1'
+group :exclude do
 gem 'aws-sdk-s3', '~> 1.114.0'
 gem 'faraday_middleware-aws-sigv4', '~>0.3.0'
 gem 'typhoeus', '~> 1.4.0' # Used with Elasticsearch to support http keep-alive connections
+end
 
 # Markdown and HTML processing
 gem 'html-pipeline', '~> 2.13.2'
@@ -466,8 +482,10 @@ gem 'ruby-prof', '~> 1.3.0'
 gem 'stackprof', '~> 0.2.15', require: false
 gem 'rbtrace', '~> 0.4', require: false
 gem 'memory_profiler', '~> 0.9', require: false
+group :exclude do
 gem 'benchmark-memory', '~> 0.1', require: false
 gem 'activerecord-explain-analyze', '~> 0.1', require: false
+end
 
 # OAuth
 gem 'oauth2', '~> 2.0'
