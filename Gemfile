@@ -90,7 +90,9 @@ gem 'acme-client', '~> 2.0'
 gem 'browser', '~> 4.2'
 
 # OS detection for usage ping
+group :exclude do
 gem 'ohai', '~> 16.10'
+end
 
 # GPG
 gem 'gpgme', '~> 2.0.19'
