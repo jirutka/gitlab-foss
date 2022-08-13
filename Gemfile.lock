@@ -1418,6 +1418,3 @@ DEPENDENCIES
   webmock (~> 3.5.1)
   webpack-rails (~> 0.9.10)
   wikicloth (= 0.8.1)
-
-BUNDLED WITH
-   1.17.3
