@@ -255,6 +255,11 @@ gem 'ruby-fogbugz', '~> 0.2.1'
 # Kubernetes integration
 gem 'kubeclient', '~> 4.6.0'
 
+# This gem fails to build and bundles outdated and vulnerable copy of Node's
+# http-parser library. It's required by http <- kubeclient.
+# https://github.com/cotag/http-parser/issues/17
+gem 'http-parser', path: 'vendor/gems/http-parser', require: false
+
 # Sanitize user input
 gem 'sanitize', '~> 4.6'
 gem 'babosa', '~> 1.0.2'
