@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+begin
 require 'omniauth/strategies/saml'
 
 module OmniAuth
@@ -25,4 +26,7 @@ module OmniAuth
       end
     end
   end
+end
+rescue LoadError
+  # ignore
 end
