@@ -22,7 +22,7 @@ module Gitlab
       instrument_gitaly(payload)
       instrument_rugged(payload)
       instrument_redis(payload)
-      instrument_elasticsearch(payload)
+      instrument_elasticsearch(payload) if Gitlab.ee?
       instrument_throttle(payload)
       instrument_active_record(payload)
       instrument_external_http(payload)

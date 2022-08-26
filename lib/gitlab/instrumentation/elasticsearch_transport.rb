@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'elasticsearch-transport'
-
 module Gitlab
   module Instrumentation
     module ElasticsearchTransportInterceptor
@@ -80,6 +78,10 @@ module Gitlab
   end
 end
 
-class ::Elasticsearch::Transport::Client
-  prepend ::Gitlab::Instrumentation::ElasticsearchTransportInterceptor
+if Gitlab.ee?
+  require 'elasticsearch-transport'
+  
+  class ::Elasticsearch::Transport::Client
+    prepend ::Gitlab::Instrumentation::ElasticsearchTransportInterceptor
+  end
 end
