@@ -11244,7 +11244,7 @@ CREATE TABLE application_settings (
     throttle_unauthenticated_packages_api_enabled boolean DEFAULT false NOT NULL,
     throttle_authenticated_packages_api_enabled boolean DEFAULT false NOT NULL,
     deactivate_dormant_users boolean DEFAULT false NOT NULL,
-    whats_new_variant smallint DEFAULT 0,
+    whats_new_variant smallint DEFAULT 1,
     encrypted_spam_check_api_key bytea,
     encrypted_spam_check_api_key_iv bytea,
     floc_enabled boolean DEFAULT false NOT NULL,
