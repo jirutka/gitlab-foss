@@ -514,7 +514,7 @@ module ApplicationSettingsHelper
   end
 
   def registration_features_can_be_prompted?
-    !Gitlab::CurrentSettings.usage_ping_enabled?
+    false  # XXX-Patched: !Gitlab::CurrentSettings.usage_ping_enabled?
   end
 
   def signup_form_data
