@@ -39,7 +39,7 @@ class ProjectPresenter < Gitlab::View::Presenter::Delegated
       license_anchor_data,
       changelog_anchor_data,
       contribution_guide_anchor_data,
-      autodevops_anchor_data(show_auto_devops_callout: show_auto_devops_callout),
+      #autodevops_anchor_data(show_auto_devops_callout: show_auto_devops_callout), XXX-Patched
       kubernetes_cluster_anchor_data,
       gitlab_ci_anchor_data,
       integrations_anchor_data
